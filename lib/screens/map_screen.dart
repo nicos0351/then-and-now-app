@@ -689,6 +689,8 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
       // instead of stopping at about half, so facts aren't hidden below.
       isScrollControlled: true,
       constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * 0.85),
+      // The grab bar shows it can be swiped down to close.
+      showDragHandle: true,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
@@ -1259,7 +1261,7 @@ class _TownDetailSheet extends StatelessWidget {
     // Scrolls when a name story makes the sheet taller than the screen allows.
     return SingleChildScrollView(
       // Clear of the phone's navigation bar now the sheet can be tall.
-      padding: EdgeInsets.fromLTRB(20, 20, 20, 20 + MediaQuery.viewPaddingOf(context).bottom),
+      padding: EdgeInsets.fromLTRB(20, 0, 20, 20 + MediaQuery.viewPaddingOf(context).bottom),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1290,6 +1292,12 @@ class _TownDetailSheet extends StatelessWidget {
                 icon: const Icon(Icons.edit_outlined),
                 tooltip: 'Record or edit a name change',
                 onPressed: () => Navigator.of(context).pop('edit'),
+              ),
+              // A clear way out, now the sheet can fill most of the screen.
+              IconButton(
+                icon: const Icon(Icons.close),
+                tooltip: 'Close',
+                onPressed: () => Navigator.of(context).pop(),
               ),
             ],
           ),
