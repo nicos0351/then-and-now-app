@@ -685,6 +685,10 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
   Future<void> _onTownTap(Town town) async {
     final action = await showModalBottomSheet<String>(
       context: context,
+      // Lets the sheet grow to fit its content (up to 85% of the screen)
+      // instead of stopping at about half, so facts aren't hidden below.
+      isScrollControlled: true,
+      constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * 0.85),
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
       ),
@@ -1254,7 +1258,8 @@ class _TownDetailSheet extends StatelessWidget {
 
     // Scrolls when a name story makes the sheet taller than the screen allows.
     return SingleChildScrollView(
-      padding: const EdgeInsets.all(20),
+      // Clear of the phone's navigation bar now the sheet can be tall.
+      padding: EdgeInsets.fromLTRB(20, 20, 20, 20 + MediaQuery.viewPaddingOf(context).bottom),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1293,6 +1298,21 @@ class _TownDetailSheet extends StatelessWidget {
             style: Theme.of(context).textTheme.bodySmall,
           ),
           const Divider(height: 24),
+          // Airports, dams and passes: the facts (and a dam's level) come
+          // first, so nobody has to scroll to find them; the name history
+          // follows.
+          if (facts != null || damStation != null) ...[
+            if (isPlus) ...[
+              if (facts != null) PlaceFactsSection(facts: facts!),
+              if (damStation != null) DamLevelTile(station: damStation!),
+            ] else
+              PlusTeaser(
+                title: 'Facts about this ${town.kindLabel?.toLowerCase() ?? 'place'}',
+                text: '${_factsTeaser(town)} are part of $kPlusName.',
+                onUnlock: () => Navigator.of(context).pop('plus'),
+              ),
+            const Divider(height: 28),
+          ],
           // Free users see that a place was renamed (and when), but its
           // previous name, notes and name story are part of Plus. If the
           // timeline is already showing the old name, the current name is
@@ -1364,18 +1384,6 @@ class _TownDetailSheet extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           // Airports, dams and passes: facts (Plus), after the name history.
-          if (facts != null || damStation != null) ...[
-            const Divider(height: 28),
-            if (isPlus) ...[
-              if (facts != null) PlaceFactsSection(facts: facts!),
-              if (damStation != null) DamLevelTile(station: damStation!),
-            ] else
-              PlusTeaser(
-                title: 'Facts about this ${town.kindLabel?.toLowerCase() ?? 'place'}',
-                text: '${_factsTeaser(town)} are part of $kPlusName.',
-                onUnlock: () => Navigator.of(context).pop('plus'),
-              ),
-          ],
         ],
       ),
     );

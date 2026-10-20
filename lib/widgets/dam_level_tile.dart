@@ -21,7 +21,17 @@ class DamLevelTile extends StatefulWidget {
 }
 
 class _DamLevelTileState extends State<DamLevelTile> {
-  late final Future<DamLevelResult> _result = DamLevelsService.instance.levelFor(widget.station);
+  late Future<DamLevelResult> _result = _load();
+
+  /// The department's site can be very slow, so give up after 30 seconds
+  /// (whatever happens inside) and offer to try again, rather than leave
+  /// the spinner running.
+  Future<DamLevelResult> _load() => DamLevelsService.instance
+      .levelFor(widget.station)
+      .timeout(const Duration(seconds: 30), onTimeout: () => const DamLevelResult.failed(DamLevelProblem.offline))
+      .catchError((Object _) => const DamLevelResult.failed(DamLevelProblem.offline));
+
+  void _retry() => setState(() => _result = _load());
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +46,12 @@ class _DamLevelTileState extends State<DamLevelTile> {
               children: [
                 const SizedBox(width: 14, height: 14, child: CircularProgressIndicator(strokeWidth: 2)),
                 const SizedBox(width: 10),
-                Text("Checking this week's dam level…", style: theme.textTheme.bodySmall),
+                Expanded(
+                  child: Text(
+                    "Checking this week's dam level with the Department of Water and Sanitation…",
+                    style: theme.textTheme.bodySmall,
+                  ),
+                ),
               ],
             ),
           );
@@ -46,10 +61,18 @@ class _DamLevelTileState extends State<DamLevelTile> {
         if (level == null) {
           if (result.problem == DamLevelProblem.notListed) return const SizedBox.shrink();
           return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 6),
-            child: Text(
-              "Couldn't get this week's dam level. Check your connection, or try again later.",
-              style: theme.textTheme.bodySmall,
+            padding: const EdgeInsets.symmetric(vertical: 2),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    "Couldn't get this week's dam level: the department's website didn't answer. "
+                    'Check your connection, or try again later.',
+                    style: theme.textTheme.bodySmall,
+                  ),
+                ),
+                TextButton(onPressed: _retry, child: const Text('Try again')),
+              ],
             ),
           );
         }
