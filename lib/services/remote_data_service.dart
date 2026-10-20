@@ -43,6 +43,7 @@ class RemotePayload {
     required this.towns,
     required this.storiesJson,
     this.factsJson = const [],
+    this.damStationsJson = const [],
   });
 
   final int dataVersion;
@@ -56,6 +57,10 @@ class RemotePayload {
   /// The raw `facts` list (airports, dams, passes), cached to disk as-is.
   /// Older data files have none.
   final List<dynamic> factsJson;
+
+  /// The raw `damStations` list (where each dam's weekly level is
+  /// published). Older data files have none.
+  final List<dynamic> damStationsJson;
 
   static dynamic _decode(String body) {
     try {
@@ -128,6 +133,16 @@ class RemotePayload {
       }
     }
 
+    final rawStations = decoded['damStations'] ?? const [];
+    if (rawStations is! List) throw const FormatException('The update file has a broken dam station list.');
+    for (final raw in rawStations) {
+      try {
+        DamStation.fromJson(raw as Map<String, dynamic>);
+      } catch (_) {
+        throw const FormatException('The update file has a broken dam station.');
+      }
+    }
+
     final changes = <DataChange>[];
     for (final raw in (decoded['changes'] as List<dynamic>? ?? const [])) {
       if (raw is Map<String, dynamic> && raw['version'] is int && raw['summary'] is String) {
@@ -142,6 +157,7 @@ class RemotePayload {
       towns: towns,
       storiesJson: rawStories,
       factsJson: rawFacts,
+      damStationsJson: rawStations,
     );
   }
 }
@@ -204,7 +220,7 @@ class RemoteDataService {
 
       await db.applyTownData(payload.towns, payload.dataVersion);
       await _saveStories(payload.dataVersion, payload.storiesJson);
-      await _saveFacts(payload.dataVersion, payload.factsJson);
+      await _saveFacts(payload.dataVersion, payload.factsJson, payload.damStationsJson);
       final news = payload.changes.where((c) => c.version > local).toList()
         ..sort((a, b) => a.version.compareTo(b.version));
       return RefreshResult(
@@ -278,9 +294,26 @@ class RemoteDataService {
     return File('${dir.path}/$_factsFile');
   }
 
-  Future<void> _saveFacts(int version, List<dynamic> facts) async {
+  Future<void> _saveFacts(int version, List<dynamic> facts, List<dynamic> damStations) async {
     final file = await _factsPath();
-    await file.writeAsString(json.encode({'dataVersion': version, 'facts': facts}), flush: true);
+    await file.writeAsString(json.encode({'dataVersion': version, 'facts': facts, 'damStations': damStations}),
+        flush: true);
+  }
+
+  /// Dam stations from the last downloaded update, if newer than the
+  /// bundled ones; otherwise null (use the bundled ones).
+  Future<Map<String, DamStation>?> cachedDamStationsIfNewer() async {
+    try {
+      final file = await _factsPath();
+      if (!await file.exists()) return null;
+      final decoded = json.decode(await file.readAsString()) as Map<String, dynamic>;
+      final version = decoded['dataVersion'] as int? ?? 0;
+      if (version <= DatabaseHelper.seedVersion) return null;
+      return DamStation.parseList(decoded['damStations'] as List<dynamic>? ?? const []);
+    } catch (e) {
+      debugPrint('Ignoring cached dam stations: $e');
+      return null;
+    }
   }
 
   /// Airport, dam and pass facts from the last downloaded update, if

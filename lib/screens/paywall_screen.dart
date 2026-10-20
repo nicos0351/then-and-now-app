@@ -213,7 +213,7 @@ class _PaywallScreenState extends State<PaywallScreen> {
         const _PlusFeature(
           Icons.fact_check_outlined,
           'Facts about airports, dams and passes',
-          'Airport codes and height, a dam\'s river, capacity and wall height, and a pass\'s height, road and surface.',
+          'Airport codes and height, a dam\'s river, capacity and how full it is this week, and a pass\'s height, road and surface.',
         ),
         const _PlusFeature(
           Icons.edit_location_alt_outlined,

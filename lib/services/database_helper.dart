@@ -47,7 +47,10 @@ class DatabaseHelper {
   //     (OpenStreetMap), 11 more renames among them
   //  8: facts for airports, dams and passes (`facts`, in its own asset);
   //     duplicate Gariep Dam pin removed
-  static const int seedVersion = 8;
+  //  9: 48 more dams (every dam in the weekly State of Dams report), dam
+  //     stations for weekly levels (`damStations`, own asset), duplicate
+  //     Brandvlei Dam pin removed
+  static const int seedVersion = 9;
 
   Database? _db;
 

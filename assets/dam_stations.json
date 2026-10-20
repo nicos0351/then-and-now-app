@@ -1,0 +1,932 @@
+[
+ {
+  "key": "asset:albasini dam:-23.103:30.101",
+  "region": "LP",
+  "station": "A9R001"
+ },
+ {
+  "key": "asset:albert falls dam:-29.437:30.388",
+  "region": "KN",
+  "station": "U2R003"
+ },
+ {
+  "key": "asset:allemanskraal dam:-28.303:27.222",
+  "region": "FS",
+  "station": "C4R001"
+ },
+ {
+  "key": "asset:armenia dam:-29.364:27.129",
+  "region": "FS",
+  "station": "D2R002"
+ },
+ {
+  "key": "asset:belfort dam:-30.162:28.721",
+  "region": "EC",
+  "station": "T3R001"
+ },
+ {
+  "key": "asset:bellair dam:-33.716:20.593",
+  "region": "WC",
+  "station": "J1R002"
+ },
+ {
+  "key": "asset:berg river dam:-33.928:19.062",
+  "region": "WC",
+  "station": "G1R004"
+ },
+ {
+  "key": "asset:binfield park dam:-32.686:26.914",
+  "region": "EC",
+  "station": "R1R003"
+ },
+ {
+  "key": "asset:bivane dam:-27.519:31.054",
+  "region": "KN",
+  "station": "W4R002"
+ },
+ {
+  "key": "asset:bloemhof dam:-27.692:25.817",
+  "region": "FS",
+  "station": "C9R002"
+ },
+ {
+  "key": "asset:blyderivierpoort dam:-24.547:30.791",
+  "region": "M",
+  "station": "B6R003"
+ },
+ {
+  "key": "asset:boegoeberg dam:-29.042:22.201",
+  "region": "NC",
+  "station": "D7R001"
+ },
+ {
+  "key": "asset:bon accord dam:-25.622:28.190",
+  "region": "G",
+  "station": "A2R002"
+ },
+ {
+  "key": "asset:boskop dam:-26.549:27.119",
+  "region": "NW",
+  "station": "C2R001"
+ },
+ {
+  "key": "asset:bospoort dam:-25.573:27.327",
+  "region": "NW",
+  "station": "A2R006"
+ },
+ {
+  "key": "asset:brandvlei dam:-33.766:19.470",
+  "region": "WC",
+  "station": "H1R001"
+ },
+ {
+  "key": "asset:bridle drift dam:-32.990:27.727",
+  "region": "EC",
+  "station": "R2R003"
+ },
+ {
+  "key": "asset:bronkhorstspruit dam:-25.915:28.693",
+  "region": "G",
+  "station": "B2R001"
+ },
+ {
+  "key": "asset:buffeljags dam:-34.011:20.547",
+  "region": "WC",
+  "station": "H7R001"
+ },
+ {
+  "key": "asset:buffelskloof dam:-24.958:30.256",
+  "region": "M",
+  "station": "B4R004"
+ },
+ {
+  "key": "asset:buffelspoort dam:-25.792:27.486",
+  "region": "NW",
+  "station": "A2R005"
+ },
+ {
+  "key": "asset:bulshoek dam:-32.028:18.802",
+  "region": "WC",
+  "station": "E1R001"
+ },
+ {
+  "key": "asset:calitzdorp dam:-33.482:21.709",
+  "region": "WC",
+  "station": "J2R001"
+ },
+ {
+  "key": "asset:cata dam:-32.622:27.118",
+  "region": "EC",
+  "station": "R1R002"
+ },
+ {
+  "key": "asset:clanwilliam dam:-32.256:18.905",
+  "region": "WC",
+  "station": "E1R002"
+ },
+ {
+  "key": "asset:corana dam:-31.436:28.874",
+  "region": "EC",
+  "station": "T2R003"
+ },
+ {
+  "key": "asset:craigie burn dam:-29.171:30.292",
+  "region": "KN",
+  "station": "V2R001"
+ },
+ {
+  "key": "asset:da gama dam:-25.142:31.021",
+  "region": "M",
+  "station": "X3R001"
+ },
+ {
+  "key": "asset:dap naudé dam:-23.810:29.969",
+  "region": "LP",
+  "station": "B8R006"
+ },
+ {
+  "key": "asset:darlington dam:-33.206:25.149",
+  "region": "EC",
+  "station": "N2R001"
+ },
+ {
+  "key": "asset:de bos dam:-34.365:19.241",
+  "region": "WC",
+  "station": "G4R010"
+ },
+ {
+  "key": "asset:de hoop:-24.991:29.917",
+  "region": "LP",
+  "station": "B4R007"
+ },
+ {
+  "key": "asset:de mistkraal dam:-32.967:25.672",
+  "region": "EC",
+  "station": "Q8R001"
+ },
+ {
+  "key": "asset:debe dam:-32.858:27.043",
+  "region": "EC",
+  "station": "R1R005"
+ },
+ {
+  "key": "asset:disaneng dam:-25.839:25.344",
+  "region": "NW",
+  "station": "D4R003"
+ },
+ {
+  "key": "asset:doorndraai dam:-24.280:28.777",
+  "region": "LP",
+  "station": "A6R001"
+ },
+ {
+  "key": "asset:douglas weir dam:-29.044:23.836",
+  "region": "NC",
+  "station": "C9R003"
+ },
+ {
+  "key": "asset:driekoppies dam:-25.748:31.500",
+  "region": "M",
+  "station": "X1R004"
+ },
+ {
+  "key": "asset:driel barrage:-28.763:29.291",
+  "region": "KN",
+  "station": "V1R002"
+ },
+ {
+  "key": "asset:ebenezer dam:-23.937:29.972",
+  "region": "LP",
+  "station": "B8R001"
+ },
+ {
+  "key": "asset:egmont dam:-30.053:27.027",
+  "region": "FS",
+  "station": "D2R001"
+ },
+ {
+  "key": "asset:eikenhof dam:-34.120:19.033",
+  "region": "WC",
+  "station": "G4R002"
+ },
+ {
+  "key": "asset:elands drift dam:-32.527:25.760",
+  "region": "EC",
+  "station": "Q5L001"
+ },
+ {
+  "key": "asset:elandskloof dam:-33.943:19.284",
+  "region": "WC",
+  "station": "H6R002"
+ },
+ {
+  "key": "asset:elandskuil dam:-26.343:26.778",
+  "region": "NW",
+  "station": "C2R006"
+ },
+ {
+  "key": "asset:erfenis dam:-28.511:26.777",
+  "region": "FS",
+  "station": "C4R002"
+ },
+ {
+  "key": "asset:ernest robertson dam:-33.900:22.172",
+  "region": "WC",
+  "station": "K2R001"
+ },
+ {
+  "key": "asset:fika patso dam:-28.681:28.858",
+  "region": "FS",
+  "station": "C8R008"
+ },
+ {
+  "key": "asset:flag boshielo:-24.842:29.404",
+  "region": "LP",
+  "station": "B5R002"
+ },
+ {
+  "key": "asset:floriskraal dam:-33.292:20.991",
+  "region": "WC",
+  "station": "J1R003"
+ },
+ {
+  "key": "asset:gamka dam:-32.239:22.586",
+  "region": "WC",
+  "station": "J2R004"
+ },
+ {
+  "key": "asset:gamkapoort dam:-33.290:21.648",
+  "region": "WC",
+  "station": "J2R006"
+ },
+ {
+  "key": "asset:garden route dam:-33.955:22.508",
+  "region": "WC",
+  "station": "K3R002"
+ },
+ {
+  "key": "asset:gariep dam:-30.624:25.507",
+  "region": "FS",
+  "station": "D3R002"
+ },
+ {
+  "key": "asset:glen alpine dam:-23.231:28.687",
+  "region": "LP",
+  "station": "A6R002"
+ },
+ {
+  "key": "asset:glen melville dam:-33.194:26.644",
+  "region": "EC",
+  "station": "Q9R002"
+ },
+ {
+  "key": "asset:goedertrouw dam:-28.773:31.470",
+  "region": "KN",
+  "station": "W1R001"
+ },
+ {
+  "key": "asset:grassridge dam:-31.747:25.460",
+  "region": "EC",
+  "station": "Q1R001"
+ },
+ {
+  "key": "asset:groendal dam:-33.691:25.248",
+  "region": "EC",
+  "station": "M1R001"
+ },
+ {
+  "key": "asset:grootdraai dam:-26.910:29.395",
+  "region": "M",
+  "station": "C1R002"
+ },
+ {
+  "key": "asset:gubu dam:-32.605:27.274",
+  "region": "EC",
+  "station": "S6R001"
+ },
+ {
+  "key": "asset:harlem dam:-33.773:23.321",
+  "region": "WC",
+  "station": "L8R002"
+ },
+ {
+  "key": "asset:hartbeespoort dam:-25.725:27.848",
+  "region": "NW",
+  "station": "A2R001"
+ },
+ {
+  "key": "asset:hartebeeskuil dam:-34.092:21.998",
+  "region": "WC",
+  "station": "K1R001"
+ },
+ {
+  "key": "asset:hazelmere dam:-29.589:31.034",
+  "region": "KN",
+  "station": "U3R001"
+ },
+ {
+  "key": "asset:heyshope dam:-26.994:30.524",
+  "region": "M",
+  "station": "W5R004"
+ },
+ {
+  "key": "asset:hluhluwe dam:-28.119:32.169",
+  "region": "KN",
+  "station": "W3R001"
+ },
+ {
+  "key": "asset:impofu dam:-34.093:24.691",
+  "region": "EC",
+  "station": "K9R002"
+ },
+ {
+  "key": "asset:inanda dam:-29.670:30.835",
+  "region": "KN",
+  "station": "U2R004"
+ },
+ {
+  "key": "asset:injaka dam reservoir:-24.879:31.039",
+  "region": "M",
+  "station": "X3R002"
+ },
+ {
+  "key": "asset:jericho dam:-26.640:30.453",
+  "region": "M",
+  "station": "W5R001"
+ },
+ {
+  "key": "asset:kalkfontein dam:-29.530:25.264",
+  "region": "FS",
+  "station": "C5R002"
+ },
+ {
+  "key": "asset:kammanassie dam:-33.667:22.417",
+  "region": "WC",
+  "station": "J3R001"
+ },
+ {
+  "key": "asset:karee dam:-31.427:19.787",
+  "region": "NC",
+  "station": "E4R001"
+ },
+ {
+  "key": "asset:katrivier dam:-32.571:26.775",
+  "region": "EC",
+  "station": "Q9R001"
+ },
+ {
+  "key": "asset:keerom dam:-33.579:19.704",
+  "region": "WC",
+  "station": "H4R002"
+ },
+ {
+  "key": "asset:klein maricopoort dam:-25.530:26.131",
+  "region": "NW",
+  "station": "A3R002"
+ },
+ {
+  "key": "asset:klerkskraal dam:-26.233:27.149",
+  "region": "NW",
+  "station": "C2R003"
+ },
+ {
+  "key": "asset:klipberg dam:-33.941:19.786",
+  "region": "WC",
+  "station": "H4R003"
+ },
+ {
+  "key": "asset:klipdrif dam:-26.609:27.310",
+  "region": "G",
+  "station": "C2R005"
+ },
+ {
+  "key": "asset:klipfontein dam:-27.821:30.805",
+  "region": "KN",
+  "station": "W2R001"
+ },
+ {
+  "key": "asset:klipvoor dam reservoir:-25.150:27.844",
+  "region": "NW",
+  "station": "A2R012"
+ },
+ {
+  "key": "asset:knellpoort dam:-29.761:26.859",
+  "region": "FS",
+  "station": "D2R006"
+ },
+ {
+  "key": "asset:kommandodrif dam:-32.091:26.041",
+  "region": "EC",
+  "station": "Q4R002"
+ },
+ {
+  "key": "asset:koppies dam:-27.244:27.693",
+  "region": "FS",
+  "station": "C7R001"
+ },
+ {
+  "key": "asset:korintepoort:-33.998:21.158",
+  "region": "WC",
+  "station": "H9R001"
+ },
+ {
+  "key": "asset:kouga dam:-33.700:24.512",
+  "region": "EC",
+  "station": "L8R001"
+ },
+ {
+  "key": "asset:kromellenboog dam:-25.454:26.345",
+  "region": "NW",
+  "station": "A3R003"
+ },
+ {
+  "key": "asset:krugersdrift:-28.844:26.030",
+  "region": "FS",
+  "station": "C5R004"
+ },
+ {
+  "key": "asset:kwaggaskloof dam:-33.767:19.473",
+  "region": "WC",
+  "station": "H4R004"
+ },
+ {
+  "key": "asset:kwena dam:-25.356:30.366",
+  "region": "M",
+  "station": "X2R005"
+ },
+ {
+  "key": "asset:laing dam:-32.969:27.493",
+  "region": "EC",
+  "station": "R2R001"
+ },
+ {
+  "key": "asset:lake arthur:-32.212:25.814",
+  "region": "EC",
+  "station": "Q4R001"
+ },
+ {
+  "key": "asset:lakenvallei dam:-33.361:19.579",
+  "region": "WC",
+  "station": "H2R002"
+ },
+ {
+  "key": "asset:leeu-gamka dam:-32.610:22.007",
+  "region": "WC",
+  "station": "J2R002"
+ },
+ {
+  "key": "asset:lindleyspoort dam:-25.517:26.691",
+  "region": "NW",
+  "station": "A2R007"
+ },
+ {
+  "key": "asset:loerie dam:-33.859:25.048",
+  "region": "EC",
+  "station": "L9R001"
+ },
+ {
+  "key": "asset:longmere dam:-25.265:31.006",
+  "region": "M",
+  "station": "X2R001"
+ },
+ {
+  "key": "asset:loskop dam:-25.450:29.328",
+  "region": "M",
+  "station": "B3R002"
+ },
+ {
+  "key": "asset:lower steenbras dam:-34.180:18.876",
+  "region": "WC",
+  "station": "G4R001"
+ },
+ {
+  "key": "asset:lubisi dam:-31.775:27.420",
+  "region": "EC",
+  "station": "S2R001"
+ },
+ {
+  "key": "asset:luphephe dam:-22.643:30.395",
+  "region": "LP",
+  "station": "A8R002"
+ },
+ {
+  "key": "asset:macubeni dam:-31.580:27.178",
+  "region": "EC",
+  "station": "S1L001"
+ },
+ {
+  "key": "asset:madikwe dam:-25.393:26.598",
+  "region": "NW",
+  "station": "A3R006"
+ },
+ {
+  "key": "asset:magoebaskloof dam:-23.820:30.051",
+  "region": "LP",
+  "station": "B8R003"
+ },
+ {
+  "key": "asset:marico-bosveld dam:-25.490:26.392",
+  "region": "NW",
+  "station": "A3R001"
+ },
+ {
+  "key": "asset:metsimatsho dam:-28.600:28.937",
+  "region": "FS",
+  "station": "C8R002"
+ },
+ {
+  "key": "asset:middel-letaba dam:-23.300:30.382",
+  "region": "LP",
+  "station": "B8R007"
+ },
+ {
+  "key": "asset:middelburg dam:-25.767:29.550",
+  "region": "M",
+  "station": "B1R002"
+ },
+ {
+  "key": "asset:middelkraal dam:-25.695:27.546",
+  "region": "NW",
+  "station": "A2R018"
+ },
+ {
+  "key": "asset:midmar dam:-29.516:30.174",
+  "region": "KN",
+  "station": "U2R001"
+ },
+ {
+  "key": "asset:misverstand dam:-33.072:18.822",
+  "region": "WC",
+  "station": "G1R003"
+ },
+ {
+  "key": "asset:mnyameni dam:-32.599:27.065",
+  "region": "EC",
+  "station": "R1R004"
+ },
+ {
+  "key": "asset:modimola dam:-25.863:25.534",
+  "region": "NW",
+  "station": "D4R004"
+ },
+ {
+  "key": "asset:mokolo dam:-24.012:27.745",
+  "region": "LP",
+  "station": "A4R001"
+ },
+ {
+  "key": "asset:molatedi dam reservoir:-24.934:26.448",
+  "region": "NW",
+  "station": "A3R004"
+ },
+ {
+  "key": "asset:morgenstond:-26.729:30.510",
+  "region": "M",
+  "station": "W5R003"
+ },
+ {
+  "key": "asset:mutshedzi dam:-22.949:30.161",
+  "region": "LP",
+  "station": "A8R004"
+ },
+ {
+  "key": "asset:nagle dam:-29.584:30.624",
+  "region": "KN",
+  "station": "U2R002"
+ },
+ {
+  "key": "asset:nahoon dam:-32.904:27.793",
+  "region": "EC",
+  "station": "R3R001"
+ },
+ {
+  "key": "asset:nandoni dam:-22.981:30.598",
+  "region": "LP",
+  "station": "A9R004"
+ },
+ {
+  "key": "asset:ncora dam:-31.765:27.640",
+  "region": "EC",
+  "station": "S5R001"
+ },
+ {
+  "key": "asset:ngotwane dam:-25.215:25.806",
+  "region": "NW",
+  "station": "A1R001"
+ },
+ {
+  "key": "asset:nooitgedacht dam:-25.950:30.082",
+  "region": "M",
+  "station": "X1R001"
+ },
+ {
+  "key": "asset:nqadu dam:-31.409:28.760",
+  "region": "EC",
+  "station": "T3R004"
+ },
+ {
+  "key": "asset:nqweba dam:-32.217:24.517",
+  "region": "EC",
+  "station": "N1R001"
+ },
+ {
+  "key": "asset:ntenetyana dam:-30.781:28.941",
+  "region": "EC",
+  "station": "T3R003"
+ },
+ {
+  "key": "asset:ntshingwayo dam:-27.993:29.884",
+  "region": "KN",
+  "station": "V3R001"
+ },
+ {
+  "key": "asset:nwanedi dam:-22.644:30.415",
+  "region": "LP",
+  "station": "A8R003"
+ },
+ {
+  "key": "asset:nzhelele dam:-22.746:30.102",
+  "region": "LP",
+  "station": "A8R001"
+ },
+ {
+  "key": "asset:ohrigstad dam:-24.943:30.636",
+  "region": "M",
+  "station": "B6R001"
+ },
+ {
+  "key": "asset:olifantsnek dam:-25.795:27.254",
+  "region": "NW",
+  "station": "A2R003"
+ },
+ {
+  "key": "asset:oukloof dam:-33.248:22.098",
+  "region": "WC",
+  "station": "J2R003"
+ },
+ {
+  "key": "asset:oxkraal dam:-32.206:26.758",
+  "region": "EC",
+  "station": "S3R003"
+ },
+ {
+  "key": "asset:pietersfontein dam:-33.667:20.012",
+  "region": "WC",
+  "station": "H3R002"
+ },
+ {
+  "key": "asset:pongolapoort dam:-27.400:31.958",
+  "region": "KN",
+  "station": "W4R001"
+ },
+ {
+  "key": "asset:poortjieskloof dam:-33.871:20.377",
+  "region": "WC",
+  "station": "H3R001"
+ },
+ {
+  "key": "asset:potchefstroom dam:-26.670:27.097",
+  "region": "NW",
+  "station": "C2R004"
+ },
+ {
+  "key": "asset:prinsrivier dam:-33.514:20.752",
+  "region": "WC",
+  "station": "J1R001"
+ },
+ {
+  "key": "asset:renosterkop dam:-25.113:28.855",
+  "region": "M",
+  "station": "B3R005"
+ },
+ {
+  "key": "asset:rietspruit dam:-26.410:26.809",
+  "region": "NW",
+  "station": "C2R007"
+ },
+ {
+  "key": "asset:rietvlei dam:-25.877:28.279",
+  "region": "G",
+  "station": "A2R004"
+ },
+ {
+  "key": "asset:roode elsberg dam:-33.427:19.567",
+  "region": "WC",
+  "station": "H2R001"
+ },
+ {
+  "key": "asset:roodekopjes dam:-25.404:27.591",
+  "region": "NW",
+  "station": "A2R015"
+ },
+ {
+  "key": "asset:roodeplaat dam:-25.621:28.372",
+  "region": "G",
+  "station": "A2R009"
+ },
+ {
+  "key": "asset:rust de winter dam:-25.235:28.496",
+  "region": "LP",
+  "station": "B3R001"
+ },
+ {
+  "key": "asset:rustfontein dam:-29.297:26.620",
+  "region": "FS",
+  "station": "C5R003"
+ },
+ {
+  "key": "asset:sandile dam:-32.717:27.101",
+  "region": "EC",
+  "station": "R1R001"
+ },
+ {
+  "key": "asset:sehujwane dam:-25.318:25.949",
+  "region": "NW",
+  "station": "A3R005"
+ },
+ {
+  "key": "asset:sol plaatje dam:-28.217:28.363",
+  "region": "FS",
+  "station": "C8R004"
+ },
+ {
+  "key": "asset:spioenkop dam:-28.683:29.463",
+  "region": "KN",
+  "station": "V1R001"
+ },
+ {
+  "key": "asset:spitskop dam:-28.077:24.544",
+  "region": "NC",
+  "station": "C3R002"
+ },
+ {
+  "key": "asset:spring grove dam:-29.333:29.934",
+  "region": "KN",
+  "station": "V2R003"
+ },
+ {
+  "key": "asset:steenbras-upper dam:-34.168:18.901",
+  "region": "WC",
+  "station": "G4R007"
+ },
+ {
+  "key": "asset:sterkfontein dam:-28.387:29.024",
+  "region": "FS",
+  "station": "C8R003"
+ },
+ {
+  "key": "asset:stettynskloof dam:-33.843:19.241",
+  "region": "WC",
+  "station": "H1R002"
+ },
+ {
+  "key": "asset:stompdrift dam:-33.512:22.586",
+  "region": "WC",
+  "station": "J3R002"
+ },
+ {
+  "key": "asset:swartruggens dam:-25.662:26.694",
+  "region": "NW",
+  "station": "A2R013"
+ },
+ {
+  "key": "asset:taung dam:-27.525:24.865",
+  "region": "NW",
+  "station": "C3R006"
+ },
+ {
+  "key": "asset:theewaterskloof dam:-34.033:19.207",
+  "region": "WC",
+  "station": "H6R001"
+ },
+ {
+  "key": "asset:tierkloof dam:-33.859:20.849",
+  "region": "WC",
+  "station": "J2R008"
+ },
+ {
+  "key": "asset:tierpoort dam:-29.410:26.154",
+  "region": "FS",
+  "station": "C5R001"
+ },
+ {
+  "key": "asset:tsojana dam:-31.884:27.624",
+  "region": "EC",
+  "station": "S5R002"
+ },
+ {
+  "key": "asset:tzaneen dam:-23.800:30.148",
+  "region": "LP",
+  "station": "B8R005"
+ },
+ {
+  "key": "asset:umtata dam:-31.495:28.711",
+  "region": "EC",
+  "station": "T2R001"
+ },
+ {
+  "key": "asset:vaal barrage dam:-26.765:27.684",
+  "region": "FS",
+  "station": "C2R008"
+ },
+ {
+  "key": "asset:vaal dam:-26.883:28.115",
+  "region": "FS",
+  "station": "C1R001"
+ },
+ {
+  "key": "asset:vaalharts dam:-28.126:24.935",
+  "region": "NC",
+  "station": "C9R001"
+ },
+ {
+  "key": "asset:vaalkop dam:-25.341:27.446",
+  "region": "NW",
+  "station": "A2R014"
+ },
+ {
+  "key": "asset:vanderkloof dam:-29.992:24.732",
+  "region": "FS",
+  "station": "D3R003"
+ },
+ {
+  "key": "asset:vergelegen dam:-24.802:29.843",
+  "region": "LP",
+  "station": "B8R004"
+ },
+ {
+  "key": "asset:vondo dam:-22.950:30.352",
+  "region": "LP",
+  "station": "A9R002"
+ },
+ {
+  "key": "asset:voëlvlei dam:-33.339:19.030",
+  "region": "WC",
+  "station": "G1R001"
+ },
+ {
+  "key": "asset:vygeboom dam:-25.864:30.617",
+  "region": "M",
+  "station": "X1R003"
+ },
+ {
+  "key": "asset:wagendrift dam:-29.048:29.835",
+  "region": "KN",
+  "station": "V7R001"
+ },
+ {
+  "key": "asset:waterdown dam:-32.305:26.861",
+  "region": "EC",
+  "station": "S3R001"
+ },
+ {
+  "key": "asset:welbedacht dam:-29.868:26.897",
+  "region": "FS",
+  "station": "D2R004"
+ },
+ {
+  "key": "asset:wemmershoek dam:-33.822:19.093",
+  "region": "WC",
+  "station": "G1R002"
+ },
+ {
+  "key": "asset:westoe dam:-26.487:30.598",
+  "region": "M",
+  "station": "W5R002"
+ },
+ {
+  "key": "asset:witbank dam:-25.891:29.305",
+  "region": "M",
+  "station": "B1R001"
+ },
+ {
+  "key": "asset:witklip dam:-25.223:30.892",
+  "region": "M",
+  "station": "X2R003"
+ },
+ {
+  "key": "asset:wolwedans dam:-34.001:22.218",
+  "region": "WC",
+  "station": "K2R002"
+ },
+ {
+  "key": "asset:woodstock dam:-28.743:29.204",
+  "region": "KN",
+  "station": "V1R003"
+ },
+ {
+  "key": "asset:wriggleswade dam:-32.585:27.532",
+  "region": "EC",
+  "station": "S6R002"
+ },
+ {
+  "key": "asset:xonxa dam:-31.838:27.181",
+  "region": "EC",
+  "station": "S1R001"
+ },
+ {
+  "key": "asset:zaaihoek dam:-27.432:30.093",
+  "region": "KN",
+  "station": "V3R003"
+ }
+]

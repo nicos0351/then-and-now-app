@@ -7994,33 +7994,6 @@
   ]
  },
  {
-  "key": "asset:brandvlei dam:-33.741:19.425",
-  "facts": [
-   [
-    "River",
-    "Brandvlei River"
-   ],
-   [
-    "Completed",
-    "1983"
-   ],
-   [
-    "Capacity",
-    "286 million m³"
-   ],
-   [
-    "Wall height",
-    "14 m"
-   ]
-  ],
-  "sources": [
-   "https://en.wikipedia.org/wiki/Brandvlei_Dam",
-   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
-   "https://www.wikidata.org/entity/Q4957207",
-   "https://www.openstreetmap.org/relation/2527932"
-  ]
- },
- {
   "key": "asset:klipberg dam:-33.941:19.786",
   "facts": [
    [
@@ -10817,6 +10790,728 @@
   ],
   "sources": [
    "https://www.wikidata.org/entity/Q31972471"
+  ]
+ },
+ {
+  "key": "asset:gubu dam:-32.605:27.274",
+  "facts": [
+   [
+    "River",
+    "Gubu River"
+   ],
+   [
+    "Completed",
+    "1971"
+   ],
+   [
+    "Capacity",
+    "8.7 million m³"
+   ],
+   [
+    "Wall height",
+    "26 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q31918766"
+  ]
+ },
+ {
+  "key": "asset:katrivier dam:-32.571:26.775",
+  "facts": [
+   [
+    "River",
+    "Kat River"
+   ],
+   [
+    "Completed",
+    "1969"
+   ],
+   [
+    "Capacity",
+    "25 million m³"
+   ],
+   [
+    "Wall height",
+    "55 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q31930438"
+  ]
+ },
+ {
+  "key": "asset:sandile dam:-32.717:27.101",
+  "facts": [
+   [
+    "River",
+    "Keiskamma River"
+   ],
+   [
+    "Completed",
+    "1983"
+   ],
+   [
+    "Capacity",
+    "31 million m³"
+   ],
+   [
+    "Wall height",
+    "61 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Sandile_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q7416360"
+  ]
+ },
+ {
+  "key": "asset:xonxa dam:-31.838:27.181",
+  "facts": [
+   [
+    "River",
+    "White Kei River"
+   ],
+   [
+    "Completed",
+    "1974"
+   ],
+   [
+    "Capacity",
+    "116 million m³"
+   ],
+   [
+    "Wall height",
+    "49 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Xonxa_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q8044922"
+  ]
+ },
+ {
+  "key": "asset:erfenis dam:-28.511:26.777",
+  "facts": [
+   [
+    "River",
+    "Groot-Vet River"
+   ],
+   [
+    "Completed",
+    "1960"
+   ],
+   [
+    "Capacity",
+    "206 million m³"
+   ],
+   [
+    "Wall height",
+    "46 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Erfenis_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q5385757"
+  ]
+ },
+ {
+  "key": "asset:bon accord dam:-25.622:28.190",
+  "facts": [
+   [
+    "River",
+    "Apies River"
+   ],
+   [
+    "Completed",
+    "1925"
+   ],
+   [
+    "Capacity",
+    "4.4 million m³"
+   ],
+   [
+    "Wall height",
+    "18 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bon_Accord_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q4940932"
+  ]
+ },
+ {
+  "key": "asset:bivane dam:-27.519:31.054",
+  "facts": [
+   [
+    "River",
+    "Bivane River"
+   ],
+   [
+    "Completed",
+    "2000"
+   ],
+   [
+    "Capacity",
+    "115 million m³"
+   ],
+   [
+    "Wall height",
+    "72 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bivane_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q4919219"
+  ]
+ },
+ {
+  "key": "asset:goedertrouw dam:-28.773:31.470",
+  "facts": [
+   [
+    "River",
+    "Mhlatuze River"
+   ],
+   [
+    "Completed",
+    "1982"
+   ],
+   [
+    "Capacity",
+    "301 million m³"
+   ],
+   [
+    "Wall height",
+    "88 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Goedertrouw_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q5577121"
+  ]
+ },
+ {
+  "key": "asset:hluhluwe dam:-28.119:32.169",
+  "facts": [
+   [
+    "River",
+    "Hluhluwe River"
+   ],
+   [
+    "Completed",
+    "1965"
+   ],
+   [
+    "Capacity",
+    "26 million m³"
+   ],
+   [
+    "Wall height",
+    "33 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q31919953"
+  ]
+ },
+ {
+  "key": "asset:wagendrift dam:-29.048:29.835",
+  "facts": [
+   [
+    "River",
+    "Bushmans River"
+   ],
+   [
+    "Completed",
+    "1963"
+   ],
+   [
+    "Capacity",
+    "56 million m³"
+   ],
+   [
+    "Wall height",
+    "41 m"
+   ],
+   [
+    "Wall type",
+    "Arch"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Wagendrift_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q7959507"
+  ]
+ },
+ {
+  "key": "asset:doorndraai dam:-24.280:28.777",
+  "facts": [
+   [
+    "River",
+    "Sterk River"
+   ],
+   [
+    "Completed",
+    "1952"
+   ],
+   [
+    "Capacity",
+    "44 million m³"
+   ],
+   [
+    "Wall height",
+    "25 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Doorndraai_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q5297239"
+  ]
+ },
+ {
+  "key": "asset:mutshedzi dam:-22.949:30.161",
+  "facts": [
+   [
+    "River",
+    "Mutshedzi River"
+   ],
+   [
+    "Completed",
+    "1990"
+   ],
+   [
+    "Capacity",
+    "2.3 million m³"
+   ],
+   [
+    "Wall height",
+    "25 m"
+   ],
+   [
+    "Wall type",
+    "Concrete gravity"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mutshedzi_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q6944020"
+  ]
+ },
+ {
+  "key": "asset:da gama dam:-25.142:31.021",
+  "facts": [
+   [
+    "River",
+    "Witwaters River"
+   ],
+   [
+    "Completed",
+    "1971"
+   ],
+   [
+    "Capacity",
+    "14 million m³"
+   ],
+   [
+    "Wall height",
+    "38 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Da_Gama_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q5207236"
+  ]
+ },
+ {
+  "key": "asset:heyshope dam:-26.994:30.524",
+  "facts": [
+   [
+    "River",
+    "Assegaai River"
+   ],
+   [
+    "Completed",
+    "1983"
+   ],
+   [
+    "Capacity",
+    "451 million m³"
+   ],
+   [
+    "Wall height",
+    "29 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Heyshope_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q5749800"
+  ]
+ },
+ {
+  "key": "asset:middelburg dam:-25.767:29.550",
+  "facts": [
+   [
+    "River",
+    "Klein Olifants River"
+   ],
+   [
+    "Completed",
+    "1978"
+   ],
+   [
+    "Capacity",
+    "48 million m³"
+   ],
+   [
+    "Wall height",
+    "36 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Middelburg_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q6841155"
+  ]
+ },
+ {
+  "key": "asset:witbank dam:-25.891:29.305",
+  "facts": [
+   [
+    "River",
+    "Olifants River"
+   ],
+   [
+    "Completed",
+    "1971"
+   ],
+   [
+    "Capacity",
+    "104 million m³"
+   ],
+   [
+    "Wall height",
+    "44 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Witbank_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q1009318"
+  ]
+ },
+ {
+  "key": "asset:douglas weir dam:-29.044:23.836",
+  "facts": [
+   [
+    "River",
+    "Vaal River"
+   ],
+   [
+    "Completed",
+    "1977"
+   ],
+   [
+    "Capacity",
+    "17 million m³"
+   ],
+   [
+    "Wall height",
+    "10 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Douglas_Weir",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q5302092"
+  ]
+ },
+ {
+  "key": "asset:klerkskraal dam:-26.233:27.149",
+  "facts": [
+   [
+    "River",
+    "Mooi River"
+   ],
+   [
+    "Completed",
+    "1965"
+   ],
+   [
+    "Capacity",
+    "7.9 million m³"
+   ],
+   [
+    "Wall height",
+    "15 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Klerkskraal_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q6420640"
+  ]
+ },
+ {
+  "key": "asset:lindleyspoort dam:-25.517:26.691",
+  "facts": [
+   [
+    "River",
+    "Elands River"
+   ],
+   [
+    "Completed",
+    "1943"
+   ],
+   [
+    "Capacity",
+    "14 million m³"
+   ],
+   [
+    "Wall height",
+    "39 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q31942972"
+  ]
+ },
+ {
+  "key": "asset:madikwe dam:-25.393:26.598",
+  "facts": [
+   [
+    "River",
+    "Thulane River"
+   ],
+   [
+    "Completed",
+    "1976"
+   ],
+   [
+    "Capacity",
+    "14 million m³"
+   ],
+   [
+    "Wall height",
+    "17 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Madikwe_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q15243481"
+  ]
+ },
+ {
+  "key": "asset:potchefstroom dam:-26.670:27.097",
+  "facts": [
+   [
+    "River",
+    "Mooi River"
+   ],
+   [
+    "Completed",
+    "1950"
+   ],
+   [
+    "Capacity",
+    "2.0 million m³"
+   ],
+   [
+    "Wall height",
+    "8 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Potchefstroom_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q1009342"
+  ]
+ },
+ {
+  "key": "asset:roodekopjes dam:-25.404:27.591",
+  "facts": [
+   [
+    "Completed",
+    "1984"
+   ],
+   [
+    "Wall height",
+    "25 m"
+   ],
+   [
+    "Wall type",
+    "Concrete gravity"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Roodekoppies_Dam",
+   "https://www.wikidata.org/entity/Q7366120"
+  ]
+ },
+ {
+  "key": "asset:taung dam:-27.525:24.865",
+  "facts": [
+   [
+    "River",
+    "Harts River"
+   ],
+   [
+    "Completed",
+    "1993"
+   ],
+   [
+    "Capacity",
+    "59 million m³"
+   ],
+   [
+    "Wall height",
+    "44 m"
+   ],
+   [
+    "Wall type",
+    "Concrete gravity"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Taung_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q17092243"
+  ]
+ },
+ {
+  "key": "asset:floriskraal dam:-33.292:20.991",
+  "facts": [
+   [
+    "River",
+    "Buffels River"
+   ],
+   [
+    "Completed",
+    "1957"
+   ],
+   [
+    "Capacity",
+    "50 million m³"
+   ],
+   [
+    "Wall height",
+    "33 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Floriskraal_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q5461903"
+  ]
+ },
+ {
+  "key": "asset:kammanassie dam:-33.667:22.417",
+  "facts": [
+   [
+    "River",
+    "Kammanassie River"
+   ],
+   [
+    "Completed",
+    "1923"
+   ],
+   [
+    "Capacity",
+    "36 million m³"
+   ],
+   [
+    "Wall height",
+    "35 m"
+   ],
+   [
+    "Wall type",
+    "Concrete gravity"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Kammanassie_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q6358814"
+  ]
+ },
+ {
+  "key": "asset:kwaggaskloof dam:-33.767:19.473",
+  "facts": [
+   [
+    "River",
+    "Wabooms River"
+   ],
+   [
+    "Completed",
+    "1975"
+   ],
+   [
+    "Capacity",
+    "169 million m³"
+   ],
+   [
+    "Wall height",
+    "18 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Kwaggaskloof_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q15240958"
+  ]
+ },
+ {
+  "key": "asset:steenbras-upper dam:-34.168:18.901",
+  "facts": [
+   [
+    "Completed",
+    "1977"
+   ],
+   [
+    "Wall height",
+    "37 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Steenbras_Upper_Dam",
+   "https://www.wikidata.org/entity/Q7605879"
+  ]
+ },
+ {
+  "key": "asset:voëlvlei dam:-33.339:19.030",
+  "facts": [
+   [
+    "Completed",
+    "1971"
+   ],
+   [
+    "Capacity",
+    "164 million m³"
+   ],
+   [
+    "Wall height",
+    "10 m"
+   ]
+  ],
+  "sources": [
+   "https://en.wikipedia.org/wiki/Vo%C3%ABlvlei_Dam",
+   "https://en.wikipedia.org/wiki/List_of_dams_in_South_Africa",
+   "https://www.wikidata.org/entity/Q2402457"
   ]
  }
 ]

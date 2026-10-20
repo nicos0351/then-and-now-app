@@ -25,6 +25,7 @@ import '../utils/refresh_time.dart';
 import '../widgets/app_promo_card.dart';
 import '../widgets/map_attribution.dart';
 import '../widgets/name_story_section.dart';
+import '../widgets/dam_level_tile.dart';
 import '../widgets/place_facts_section.dart';
 import '../widgets/plus_teaser.dart';
 import '../widgets/share_card.dart';
@@ -119,6 +120,9 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
 
   /// Facts about airports, dams and passes (Plus), keyed by place key.
   Map<String, PlaceFacts> _facts = const {};
+
+  /// Where each dam's weekly level is published (Plus), keyed by dam key.
+  Map<String, DamStation> _damStations = const {};
 
   /// Province/neighbour outline drawn under the tiles (shows where tiles
   /// can't load). Empty until loaded; the map works without it.
@@ -395,6 +399,12 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
     } catch (e) {
       debugPrint('Could not load place facts: $e');
     }
+    Map<String, DamStation> damStations = const {};
+    try {
+      damStations = await RemoteDataService.instance.cachedDamStationsIfNewer() ?? await DamStation.loadAll();
+    } catch (e) {
+      debugPrint('Could not load dam stations: $e');
+    }
     final lastRefreshed = await RemoteDataService.instance.lastRefreshed();
     final dataVersion = await DatabaseHelper.instance.dataVersion();
     if (!mounted) return;
@@ -403,6 +413,7 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
       _townsRevision++;
       _stories = stories;
       _facts = facts;
+      _damStations = damStations;
       _lastRefreshed = lastRefreshed;
       _dataVersion = dataVersion;
     });
@@ -517,6 +528,10 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
   /// town's current name (a user may have renamed it since).
   /// Facts for an airport, dam or pass (towns have none).
   PlaceFacts? _factsFor(Town town) => town.isTown || town.sourceKey == null ? null : _facts[town.sourceKey];
+
+  /// Where a dam's weekly level is published, if it's in the weekly report.
+  DamStation? _damStationFor(Town town) =>
+      town.kind != 'dam' || town.sourceKey == null ? null : _damStations[town.sourceKey];
 
   NameStory? _storyFor(Town town) {
     final key = town.sourceKey;
@@ -678,6 +693,7 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
         showOldNames: _isShowingOldName(town),
         story: _storyFor(town),
         facts: _factsFor(town),
+        damStation: _damStationFor(town),
         isPlus: _isPlus,
       ),
     );
@@ -1200,7 +1216,12 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
 
 class _TownDetailSheet extends StatelessWidget {
   const _TownDetailSheet(
-      {required this.town, required this.showOldNames, this.story, this.facts, required this.isPlus});
+      {required this.town,
+      required this.showOldNames,
+      this.story,
+      this.facts,
+      this.damStation,
+      required this.isPlus});
 
   final Town town;
   final bool showOldNames;
@@ -1209,10 +1230,13 @@ class _TownDetailSheet extends StatelessWidget {
   /// Airport, dam or pass facts, if there are any.
   final PlaceFacts? facts;
 
+  /// For dams in the weekly report: where to get the dam's level.
+  final DamStation? damStation;
+
   /// What the facts are, in a few words, for the Plus teaser.
   static String _factsTeaser(Town town) => switch (town.kind) {
         'airport' => 'Airport codes, height above sea level and who runs it',
-        'dam' => 'The river, when it was built, its capacity and wall height',
+        'dam' => 'The river, when it was built, its capacity, wall height and weekly level',
         'pass' => 'Height at the top, mountain range, road and surface',
         _ => 'Facts about this place',
       };
@@ -1340,11 +1364,12 @@ class _TownDetailSheet extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           // Airports, dams and passes: facts (Plus), after the name history.
-          if (facts != null) ...[
+          if (facts != null || damStation != null) ...[
             const Divider(height: 28),
-            if (isPlus)
-              PlaceFactsSection(facts: facts!)
-            else
+            if (isPlus) ...[
+              if (facts != null) PlaceFactsSection(facts: facts!),
+              if (damStation != null) DamLevelTile(station: damStation!),
+            ] else
               PlusTeaser(
                 title: 'Facts about this ${town.kindLabel?.toLowerCase() ?? 'place'}',
                 text: '${_factsTeaser(town)} are part of $kPlusName.',
@@ -1552,7 +1577,7 @@ class _HelpText extends StatelessWidget {
     (Icons.zoom_in, 'Pinch with two fingers to zoom, and drag with one finger to move the map.'),
     (Icons.zoom_out_map, 'The button at the top right takes you back to the whole of South Africa.'),
     (Icons.location_on, 'Red pins are places with a name change on record. Blue-grey pins have none on record yet.'),
-    (Icons.local_airport, 'Airports, dams and mountain passes have their own pin shapes. With $kPlusName, tapping one shows facts such as its height, river or capacity.'),
+    (Icons.local_airport, 'Airports, dams and mountain passes have their own pin shapes. With $kPlusName, tapping one shows facts such as its height, river or capacity, and for big dams how full they are this week.'),
     (Icons.touch_app_outlined, 'Tap a pin to see when the place was renamed. With $kPlusName you see its previous name, what the new name means and how to say it.'),
     (Icons.update, 'With $kPlusName, the button at the bottom switches the whole map between current and previous names.'),
     (Icons.filter_alt_outlined, '"Renamed towns only" (top left) hides places without a name change. It is on each time the app opens; tap it to see every town.'),
