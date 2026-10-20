@@ -15,6 +15,7 @@ import '../models/map_outline.dart';
 import '../models/name_story.dart';
 import '../models/place_facts.dart';
 import '../models/town.dart';
+import '../services/app_update_service.dart';
 import '../services/database_helper.dart';
 import '../services/location_service.dart';
 import '../services/offline_maps_service.dart';
@@ -299,6 +300,11 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
     MapTileSource.warnIfPlaceholderAppId();
     WidgetsBinding.instance.addObserver(this);
     _loadHelpRead();
+    // A newer version on Google Play? Asked a little after opening, so it
+    // doesn't pop up while the map and Help are still appearing.
+    Future.delayed(const Duration(seconds: 10), () {
+      if (mounted) AppUpdateService.checkForUpdate(ScaffoldMessenger.of(context));
+    });
     _loadOutline();
     _loadTowns();
     _loadOfflinePacks();

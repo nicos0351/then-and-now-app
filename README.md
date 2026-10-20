@@ -72,6 +72,12 @@ name isn't currently showing.
   - a **filter button** next to it: Show all (every time the app opens),
     or only towns, airports, dams or mountain passes. The two combine, e.g.
     "Airports" with "Renamed airports only"
+  - **new versions from Google Play** are offered inside the app
+    (`lib/services/app_update_service.dart`, package `in_app_update`): about
+    10 seconds after opening, at most once a day, Google Play's own "Update
+    available" box appears; the update downloads in the background and a
+    message then offers **Restart**. Only works for copies installed from
+    Google Play, so you won't see it in builds run from your PC
   - the ⋮ menu has Refresh data, Help (a plain-English guide that doubles
     as a legend for the icons; its first topic explains the numbered
     circles) and **About & credits**
