@@ -51,7 +51,8 @@ class DatabaseHelper {
   //     stations for weekly levels (`damStations`, own asset), duplicate
   //     Brandvlei Dam pin removed
   // 10: road surface for mountain passes
-  static const int seedVersion = 10;
+  // 11: road surface for more passes
+  static const int seedVersion = 11;
 
   Database? _db;
 
