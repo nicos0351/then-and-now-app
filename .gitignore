@@ -1,0 +1,11 @@
+.dart_tool/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+.idea/
+# Never commit signing keys or local settings
+*.jks
+*.keystore
+key.properties
+local.properties

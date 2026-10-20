@@ -1,0 +1,2 @@
+# Same lint rules as a new Flutter project.
+include: package:flutter_lints/flutter.yaml

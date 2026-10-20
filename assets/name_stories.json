@@ -1,0 +1,1116 @@
+[
+ {
+  "key": "asset:bela bela:-24.883:28.283",
+  "name": "Bela-Bela",
+  "say": "BEH-lah BEH-lah",
+  "sounds": [],
+  "meaning": "Setswana for ‘the pot that boils’ – after the hot springs the town was built around.",
+  "formerNameOrigin": "Warmbad (Warmbaths in English) meant the same thing: ‘warm bath’.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bela-Bela"
+  ]
+ },
+ {
+  "key": "asset:bhisho:-32.847:27.442",
+  "name": "Bhisho",
+  "say": "BEE-shaw",
+  "sounds": [
+   "bh"
+  ],
+  "meaning": "Usually explained as the isiXhosa word for buffalo, which is also the name of the river here. The new spelling is the standard isiXhosa one.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bhisho"
+  ]
+ },
+ {
+  "key": "asset:lady frere:-31.703:27.233",
+  "name": "Cacadu",
+  "say": "c·ah-c·AH-doo",
+  "sounds": [
+   "c"
+  ],
+  "meaning": "‘Bulrush water’ – the isiXhosa name for the White Kei River, which rises in the district.",
+  "formerNameOrigin": "Lady Frere was named after the wife of Sir Henry Bartle Frere, Cape governor from 1877 to 1880.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lady_Frere"
+  ]
+ },
+ {
+  "key": "asset:cape town international airport:-33.969:18.597",
+  "name": "Cape Town International Airport",
+  "say": null,
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": "Named after D. F. Malan, prime minister when the airport opened in 1954.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Cape_Town_International_Airport"
+  ]
+ },
+ {
+  "key": "asset:centane:-32.506:28.316",
+  "name": "Centane",
+  "say": "c·ehn-TAH-neh",
+  "sounds": [
+   "c"
+  ],
+  "meaning": "Same name, now written in standard isiXhosa spelling.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_renamed_places_in_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:centurion:-25.859:28.186",
+  "name": "Centurion",
+  "say": null,
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": "Verwoerdburg (1967) was named after prime minister Hendrik Verwoerd, regarded as the architect of apartheid.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Centurion,_Gauteng"
+  ]
+ },
+ {
+  "key": "asset:chief dawid stuurman international airport:-33.985:25.610",
+  "name": "Chief Dawid Stuurman International Airport",
+  "say": null,
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Chief_Dawid_Stuurman_International_Airport"
+  ]
+ },
+ {
+  "key": "asset:alice:-32.787:26.834",
+  "name": "Dikeni",
+  "say": "dee-KEH-nee",
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": "Alice was named in 1847 after Princess Alice, Queen Victoria's second daughter.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Alice,_Eastern_Cape"
+  ]
+ },
+ {
+  "key": "asset:dutywa:-32.096:28.305",
+  "name": "Dutywa",
+  "say": "DOO-chwah",
+  "sounds": [
+   "ty"
+  ],
+  "meaning": "Same name, now written in standard isiXhosa spelling.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_renamed_places_in_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:barkly east:-30.968:27.596",
+  "name": "Ekhephini",
+  "say": "eh-keh-PEE-nee",
+  "sounds": [
+   "aspirated"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:belfast:-25.690:30.035",
+  "name": "eMakhazeni",
+  "say": "eh-mah-kah-ZEH-nee",
+  "sounds": [
+   "aspirated"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Belfast was named after the Northern Irish birthplace of Richard Charles O'Neil, who owned the farm.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Belfast,_Mpumalanga"
+  ]
+ },
+ {
+  "key": "asset:emalahleni:-25.871:29.233",
+  "name": "Emalahleni",
+  "say": "eh-mah-lah-HLEH-nee",
+  "sounds": [
+   "hl"
+  ],
+  "meaning": "‘Place of coal’.",
+  "formerNameOrigin": "Witbank is Afrikaans for ‘white ridge’, after a white sandstone outcrop.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Witbank"
+  ]
+ },
+ {
+  "key": "asset:emanzana:-25.954:30.563",
+  "name": "eManzana",
+  "say": "eh-mahn-ZAH-nah",
+  "sounds": [],
+  "meaning": "‘Healing waters’ – the name Swazi people gave the hot spring here.",
+  "formerNameOrigin": "Badplaas is Afrikaans for ‘bath farm’.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Badplaas"
+  ]
+ },
+ {
+  "key": "asset:emanzimtoti:-30.052:30.885",
+  "name": "eManzimtoti",
+  "say": "eh-mahn-zeem-TAW-tee",
+  "sounds": [],
+  "meaning": "‘Sweet water’ – said to be King Shaka's words on tasting the river. He used ‘mtoti’ instead of the usual ‘mnandi’ out of respect for his mother, Nandi.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Amanzimtoti"
+  ]
+ },
+ {
+  "key": "asset:mount ayliff:-30.808:29.366",
+  "name": "eMaxesibeni",
+  "say": "eh-mah-x·eh-see-BEH-nee",
+  "sounds": [
+   "x"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Mount Ayliff was possibly named after William Ayliff, a Cape official, or John Ayliff, a mission founder.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mount_Ayliff"
+  ]
+ },
+ {
+  "key": "asset:emdloti:-29.663:31.121",
+  "name": "eMdloti",
+  "say": "eh-m-DLAW-tee",
+  "sounds": [
+   "m",
+   "dl"
+  ],
+  "meaning": "Same name, now written in standard isiZulu spelling; the e- at the start means ‘at’ or ‘the place of’.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_renamed_places_in_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:emgwenya:-25.637:30.324",
+  "name": "Emgwenya",
+  "say": "eh-m-GWEH-nyah",
+  "sounds": [
+   "m"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Waterval Boven is Dutch for ‘above the waterfall’.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Waterval_Boven"
+  ]
+ },
+ {
+  "key": "asset:hectorspruit:-25.441:31.684",
+  "name": "Emjejane",
+  "say": "eh-m-jeh-JAH-neh",
+  "sounds": [
+   "m"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:emkhomazi:-30.207:30.796",
+  "name": "eMkhomazi",
+  "say": "eh-m-kaw-MAH-zee",
+  "sounds": [
+   "m",
+   "aspirated"
+  ],
+  "meaning": "‘Place of the cow whales’ – whales were seen in the river mouth.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Umkomaas"
+  ]
+ },
+ {
+  "key": "asset:piet retief:-27.007:30.813",
+  "name": "eMkhondo",
+  "say": "eh-m-KAWN-daw",
+  "sounds": [
+   "m",
+   "aspirated"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Piet Retief was named after the Voortrekker leader Piet Retief.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Piet_Retief,_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:emkhuze:-27.621:32.034",
+  "name": "eMkhuze",
+  "say": "eh-m-KOO-zeh",
+  "sounds": [
+   "m",
+   "aspirated"
+  ],
+  "meaning": "Same name, now written in standard isiZulu spelling; the e- at the start means ‘at’ or ‘the place of’.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_renamed_places_in_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:mtunzini:-28.957:31.754",
+  "name": "eMthunzini",
+  "say": "eh-m-toon-ZEE-nee",
+  "sounds": [
+   "m",
+   "aspirated"
+  ],
+  "meaning": "‘A place in the shade’ in isiZulu.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mtunzini"
+  ]
+ },
+ {
+  "key": "asset:emuziwezinto:-30.310:30.663",
+  "name": "eMuziwezinto",
+  "say": "eh-moo-zee-weh-ZEEN-taw",
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:emvelo:-26.625:30.662",
+  "name": "eMvelo",
+  "say": "eh-m-VEH-law",
+  "sounds": [
+   "m"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:machadodorp:-25.669:30.250",
+  "name": "eNtokozweni",
+  "say": "eh-n-taw-kaw-ZWEH-nee",
+  "sounds": [
+   "m"
+  ],
+  "meaning": "‘Place of happiness’.",
+  "formerNameOrigin": "Machadodorp honoured Portuguese Major Joachim Machado (1894).",
+  "sources": [
+   "https://en.wikipedia.org/wiki/ENtokozweni"
+  ]
+ },
+ {
+  "key": "asset:esikhaleni:-28.871:31.900",
+  "name": "eSikhaleni",
+  "say": "eh-see-kah-LEH-nee",
+  "sounds": [
+   "aspirated"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:ixopo:-30.150:30.083",
+  "name": "eXobho",
+  "say": "eh-x·AW-baw",
+  "sounds": [
+   "x",
+   "bh"
+  ],
+  "meaning": "An isiZulu word imitating the squelch of cattle walking through mud.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ixopo"
+  ]
+ },
+ {
+  "key": "asset:kriel:-26.250:29.260",
+  "name": "Ga-Nala",
+  "say": "ha-NAH-lah",
+  "sounds": [
+   "g_sotho"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:gariep dam:-30.624:25.507",
+  "name": "Gariep Dam",
+  "say": null,
+  "sounds": [],
+  "meaning": "Gariep is Khoekhoe for ‘river’ – the original name of the Orange River, which the dam holds back.",
+  "formerNameOrigin": "Originally named after prime minister Hendrik Verwoerd.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Gariep_Dam"
+  ]
+ },
+ {
+  "key": "asset:butterworth:-32.331:28.150",
+  "name": "Gcuwa",
+  "say": "gc·OO-wah",
+  "sounds": [
+   "gc"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Butterworth was named after Joseph Butterworth.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Butterworth,_Eastern_Cape"
+  ]
+ },
+ {
+  "key": "asset:gqeberha:-33.961:25.615",
+  "name": "Gqeberha",
+  "say": "gq·eh-BEH-rha",
+  "sounds": [
+   "gq",
+   "rh"
+  ],
+  "meaning": "The isiXhosa and Southern Khoe name for the Baakens River, which runs through the city. It is also the isiXhosa name for Walmer Township, one of the city's oldest townships.",
+  "formerNameOrigin": "Port Elizabeth was named in 1820 by acting governor Sir Rufane Donkin after his late wife, Elizabeth.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Gqeberha",
+   "https://www.timeslive.co.za/news/south-africa/2021-02-24-gqeberha-the-origins-of-the-renaming-of-port-elizabeth/"
+  ]
+ },
+ {
+  "key": "asset:james calata:-31.121:26.807",
+  "name": "James Calata",
+  "say": "JAYMZ c·ah-LAH-tah",
+  "sounds": [
+   "c"
+  ],
+  "meaning": "Honours Canon James Arthur Calata (1895–1983), Anglican priest in nearby Cradock for forty years and ANC secretary-general from 1936 to 1949.",
+  "formerNameOrigin": "Jamestown was named after James Wagenaar, who owned the farm the town was laid out on.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/James_Calata",
+   "https://en.wikipedia.org/wiki/Jamestown,_Eastern_Cape"
+  ]
+ },
+ {
+  "key": "asset:schoemansdal:-25.709:31.510",
+  "name": "Kamatsamo",
+  "say": "kah-mah-TSAH-maw",
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:kariega:-33.756:25.401",
+  "name": "Kariega",
+  "say": "kah-ree-EH-gah",
+  "sounds": [],
+  "meaning": "The area's original inhabitants called the Swartkops River the Kariega River, and the wider region from Willowmore and Somerset East to Uitenhage was once called Kariega.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://www.timeslive.co.za/news/south-africa/2021-02-24-gqeberha-the-origins-of-the-renaming-of-port-elizabeth/"
+  ]
+ },
+ {
+  "key": "asset:khowa:-31.333:27.850",
+  "name": "Khowa",
+  "say": "KAW-wah",
+  "sounds": [
+   "aspirated"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Elliot was named after Sir Henry George Elliot, chief magistrate of the Transkeian territories from 1891 to 1902.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Elliot,_Eastern_Cape"
+  ]
+ },
+ {
+  "key": "asset:king phalo airport:-33.035:27.821",
+  "name": "King Phalo Airport",
+  "say": "king PAH-law",
+  "sounds": [
+   "aspirated"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Named after Ben Schoeman, the minister of transport at the time.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/King_Phalo_Airport"
+  ]
+ },
+ {
+  "key": "asset:queenstown:-31.898:26.875",
+  "name": "Komani",
+  "say": "kaw-MAH-nee",
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": "Queenstown was named after Queen Victoria.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Queenstown,_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:east london:-33.015:27.912",
+  "name": "KuGompo City",
+  "say": "koo-GOM-paw",
+  "sounds": [],
+  "meaning": "From Gompo Rock (Cove Rock) on the coast, a sacred place for amaXhosa. The name is said to echo the waves breaking on it – ‘gompo, gompo’. ‘City’ was added because a small town already had the name KuGompo.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://www.goexpress.co.za/2026/02/05/the-story-of-kugompo-how-a-wave-and-a-rock-inspired-els-new-name/",
+   "https://businesstech.co.za/news/government/850166/east-london-and-graaff-reinet-are-officially-no-more/"
+  ]
+ },
+ {
+  "key": "asset:mount frere:-30.902:28.992",
+  "name": "KwaBhaca",
+  "say": "kwah-BAH-c·ah",
+  "sounds": [
+   "bh",
+   "c"
+  ],
+  "meaning": "‘Place of the Bhaca people’ – the village of the amaBhaca chiefdom.",
+  "formerNameOrigin": "Mount Frere was named after Sir Henry Bartle Frere.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mount_Frere"
+  ]
+ },
+ {
+  "key": "asset:kwadukuza:-29.328:31.290",
+  "name": "KwaDukuza",
+  "say": "kwah-doo-KOO-zah",
+  "sounds": [],
+  "meaning": "‘Place of the lost person’ in isiZulu – after the maze of huts at King Shaka's royal capital here.",
+  "formerNameOrigin": "Stanger (1873) was named after William Stanger, surveyor-general of Natal.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/KwaDukuza"
+  ]
+ },
+ {
+  "key": "asset:kwagingindlovu:-29.027:31.582",
+  "name": "KwaGingindlovu",
+  "say": "kwah-geen-geen-DLAW-voo",
+  "sounds": [
+   "dl"
+  ],
+  "meaning": "‘Swallower of the elephant’ – one of Cetshwayo's military homesteads, named for his 1856 victory over his brother Mbuyazi.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Gingindlovu"
+  ]
+ },
+ {
+  "key": "asset:fort beaufort:-32.775:26.634",
+  "name": "KwaMaqoma",
+  "say": "kwah-mah-q·AW-mah",
+  "sounds": [
+   "q"
+  ],
+  "meaning": "Honours Maqoma, the Xhosa warrior chief who resisted British colonial forces in this area.",
+  "formerNameOrigin": "Fort Beaufort was named after the Duke of Beaufort.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Fort_Beaufort"
+  ]
+ },
+ {
+  "key": "asset:somerset east:-32.722:25.588",
+  "name": "KwaNojoli",
+  "say": "kwah-naw-JAW-lee",
+  "sounds": [],
+  "meaning": "Honours Nojoli, a royal figure in the history of the amaXhosa of this area.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://paulethousestories.jgf.org.za/who-was-nojoli/"
+  ]
+ },
+ {
+  "key": "asset:lephalale:-23.666:27.745",
+  "name": "Lephalale",
+  "say": "leh-pah-LAH-leh",
+  "sounds": [
+   "aspirated"
+  ],
+  "meaning": "Named after the main river here; from a Setswana word meaning ‘to flow’.",
+  "formerNameOrigin": "Ellisras combined the surnames of settlers Patrick Ellis and Piet Erasmus.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lephalale"
+  ]
+ },
+ {
+  "key": "asset:hartbeesfontein:-26.766:26.420",
+  "name": "Lethabong",
+  "say": "leh-tah-BAWNG",
+  "sounds": [
+   "aspirated"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:mafikeng:-25.865:25.644",
+  "name": "Mahikeng",
+  "say": "mah-hee-KENG",
+  "sounds": [],
+  "meaning": "‘Place among rocks’ in Setswana. British settlers wrote it as Mafeking.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mafikeng"
+  ]
+ },
+ {
+  "key": "asset:grahamstown:-33.304:26.533",
+  "name": "Makhanda",
+  "say": "mah-KAHN-dah",
+  "sounds": [
+   "aspirated"
+  ],
+  "meaning": "Honours Makhanda ka Nxele, the Xhosa warrior and prophet who led the 1819 attack on the British garrison here and was later imprisoned on Robben Island.",
+  "formerNameOrigin": "Grahamstown was named after Colonel John Graham, who oversaw its founding in 1812.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Makhanda,_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:malelane:-25.495:31.509",
+  "name": "Malalane",
+  "say": "mah-lah-LAH-neh",
+  "sounds": [],
+  "meaning": "Same name, with a corrected spelling.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_renamed_places_in_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:aliwal north:-30.694:26.711",
+  "name": "Maletswai",
+  "say": "mah-leh-TSWAH-ee",
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": "Aliwal North was named by Sir Harry Smith after his victory over the Sikhs at the Battle of Aliwal.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Aliwal_North"
+  ]
+ },
+ {
+  "key": "asset:maluti:-30.262:28.792",
+  "name": "Maloti",
+  "say": "mah-LOO-tee",
+  "sounds": [],
+  "meaning": "Same name, now written with the Sesotho spelling (Maloti rather than Maluti).",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_renamed_places_in_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:lydenburg:-25.096:30.444",
+  "name": "Mashishing",
+  "say": "mah-shee-SHEENG",
+  "sounds": [],
+  "meaning": "‘Long green grass’ in Sepedi – what the Bapedi called the area.",
+  "formerNameOrigin": "Lydenburg comes from the Dutch Lijdenburg, ‘town of suffering’.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Lydenburg"
+  ]
+ },
+ {
+  "key": "asset:bizana:-30.859:29.854",
+  "name": "Mbizana",
+  "say": "m-bee-ZAH-nah",
+  "sounds": [
+   "m"
+  ],
+  "meaning": "Same name, now written in standard isiXhosa spelling.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_renamed_places_in_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:mbombela:-25.475:30.969",
+  "name": "Mbombela",
+  "say": "m-bom-BEH-lah",
+  "sounds": [
+   "m"
+  ],
+  "meaning": "‘Many people together in a small space’ in siSwati.",
+  "formerNameOrigin": "Nelspruit was named after the Nel family who grazed cattle here, with spruit, an Afrikaans word for a stream.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mbombela"
+  ]
+ },
+ {
+  "key": "asset:mbombo pass:-31.236:27.842",
+  "name": "Mbombo Pass",
+  "say": "m-BOM-baw",
+  "sounds": [
+   "m"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Barkly_Pass",
+   "https://atta.travel/resource/south-africa-gazettes-new-names-for-key-tourism-towns-and-routes.html"
+  ]
+ },
+ {
+  "key": "asset:modimolle:-24.700:28.400",
+  "name": "Modimolle",
+  "say": "maw-dee-MAW-leh",
+  "sounds": [],
+  "meaning": "From the Sotho-Tswana Modimo o lle, ‘the spirit has eaten’ or ‘God has eaten’ – the local name of a hill here.",
+  "formerNameOrigin": "Nylstroom: the Voortrekkers thought the river was the Nile (Nyl) and the hill a pyramid.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Modimolle"
+  ]
+ },
+ {
+  "key": "asset:duiwelskloof:-23.693:30.140",
+  "name": "Modjadjiskloof",
+  "say": "maw-JAH-jees-kloof",
+  "sounds": [],
+  "meaning": "Honours Rain Queen Modjadji, hereditary ruler of the Lobedu people. It keeps the Afrikaans -kloof (ravine).",
+  "formerNameOrigin": "Duiwelskloof is Afrikaans for ‘Devil's ravine’.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Modjadjiskloof"
+  ]
+ },
+ {
+  "key": "asset:dendron:-23.367:29.324",
+  "name": "Mogwadi",
+  "say": "maw-GWAH-dee",
+  "sounds": [
+   "g_sotho"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:mokopane:-24.194:29.010",
+  "name": "Mokopane",
+  "say": "maw-kaw-PAH-neh",
+  "sounds": [],
+  "meaning": "Honours King (Chief) Mokopane, also written Makapan, of the Kekana Ndebele.",
+  "formerNameOrigin": "Potgietersrus remembered Voortrekker leader Piet Potgieter, killed in 1854 during the Siege of Makapansgat.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mokopane"
+  ]
+ },
+ {
+  "key": "asset:mookgophong:-24.517:28.717",
+  "name": "Mookgophong",
+  "say": "maw-aw-kgaw-PAWNG",
+  "sounds": [
+   "kg",
+   "aspirated"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Naboomspruit means ‘euphorbia tree stream’, after the Euphorbia ingens (naboom) trees.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mookgophong"
+  ]
+ },
+ {
+  "key": "asset:morebeng:-23.483:29.867",
+  "name": "Morebeng",
+  "say": "maw-reh-BENG",
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:mthatha:-31.589:28.784",
+  "name": "Mthatha",
+  "say": "m-TAH-tah",
+  "sounds": [
+   "m",
+   "aspirated"
+  ],
+  "meaning": "Named after the Mthatha River, which takes its name from the sneezewood (umthathi) trees along it, known for their wood and medicinal uses.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mthatha"
+  ]
+ },
+ {
+  "key": "asset:musina:-22.349:30.041",
+  "name": "Musina",
+  "say": "moo-SEE-nah",
+  "sounds": [],
+  "meaning": "TshiVenda for copper, from a root meaning ‘spoil’ – copper ‘spoilt’ early efforts to mine gold here.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Musina"
+  ]
+ },
+ {
+  "key": "asset:ngcobo:-31.675:27.997",
+  "name": "Ngcobo",
+  "say": "ngc·AW-baw",
+  "sounds": [
+   "ngc"
+  ],
+  "meaning": "Same name, now written in standard isiXhosa spelling.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_renamed_places_in_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:ngqamakhwe:-32.196:27.938",
+  "name": "Ngqamakhwe",
+  "say": "ngq·ah-MAH-kweh",
+  "sounds": [
+   "ngq",
+   "aspirated"
+  ],
+  "meaning": "Same name, now written in standard isiXhosa spelling.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_renamed_places_in_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:ngqeleni:-31.673:29.033",
+  "name": "Ngqeleni",
+  "say": "ngq·eh-LEH-nee",
+  "sounds": [
+   "ngq"
+  ],
+  "meaning": "Same name, now written in standard isiXhosa spelling.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_renamed_places_in_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:maclear:-31.071:28.352",
+  "name": "Nqanqarhu",
+  "say": "nq·ah-nq·AH-rhoo",
+  "sounds": [
+   "nq",
+   "rh"
+  ],
+  "meaning": "The town began in 1876 as a military camp called Nqanqaru Drift.",
+  "formerNameOrigin": "Maclear was named after astronomer Sir Thomas Maclear.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Maclear,_Eastern_Cape"
+  ]
+ },
+ {
+  "key": "asset:kirkwood:-33.398:25.443",
+  "name": "Nqweba",
+  "say": "nq·WEH-bah",
+  "sounds": [
+   "nq"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:ntabankulu:-30.959:29.303",
+  "name": "Ntabankulu",
+  "say": "n-tah-bah-NKOO-loo",
+  "sounds": [
+   "m"
+  ],
+  "meaning": "Same name, now written in standard isiXhosa spelling.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/List_of_renamed_places_in_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:ntabozuko:-32.883:27.582",
+  "name": "Ntabozuko",
+  "say": "n-tah-baw-ZOO-kaw",
+  "sounds": [
+   "m"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Berlin was founded in 1857 by German settlers and named after the German capital.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Berlin,_Eastern_Cape"
+  ]
+ },
+ {
+  "key": "asset:nthorwane:-26.717:28.850",
+  "name": "Nthorwane",
+  "say": "n-taw-RWAH-neh",
+  "sounds": [
+   "m",
+   "aspirated"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:cradock:-32.164:25.619",
+  "name": "Nxuba",
+  "say": "nx·OO-bah",
+  "sounds": [
+   "nx"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Cradock was named after Sir John Cradock, governor of the Cape Colony in the early 1800s.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Cradock,_Eastern_Cape"
+  ]
+ },
+ {
+  "key": "asset:o. r. tambo international airport:-26.133:28.250",
+  "name": "O. R. Tambo International Airport",
+  "say": null,
+  "sounds": [],
+  "meaning": "Honours Oliver Reginald Tambo (1917–1993), anti-apartheid leader and president of the ANC from 1967 to 1991.",
+  "formerNameOrigin": "Opened in 1952 as Jan Smuts International Airport, after the former prime minister.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/O._R._Tambo_International_Airport",
+   "https://en.wikipedia.org/wiki/Oliver_Tambo"
+  ]
+ },
+ {
+  "key": "asset:tongaat:-29.574:31.116",
+  "name": "oThongathi",
+  "say": "aw-taw-NGAH-tee",
+  "sounds": [
+   "aspirated"
+  ],
+  "meaning": "From the uThongathi River. In isiZulu it means ‘it is important to us’ or ‘you are important because of us’, linked to legends about King Shaka.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Tongaat"
+  ]
+ },
+ {
+  "key": "asset:polokwane:-23.904:29.469",
+  "name": "Polokwane",
+  "say": "paw-law-KWAH-neh",
+  "sounds": [],
+  "meaning": "‘Sanctuary’ in Sepedi (Northern Sotho) – a name Sepedi speakers already used for the area.",
+  "formerNameOrigin": "Pietersburg (1886) honoured Voortrekker leader Petrus Jacobus (Piet) Joubert.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Polokwane"
+  ]
+ },
+ {
+  "key": "asset:qonce:-32.881:27.394",
+  "name": "Qonce",
+  "say": "q·AW-nc·eh",
+  "sounds": [
+   "q",
+   "nc"
+  ],
+  "meaning": "The Khoikhoi name for the Buffalo River, on which the town stands.",
+  "formerNameOrigin": "King William's Town was named after King William IV.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Qonce"
+  ]
+ },
+ {
+  "key": "asset:komga:-32.577:27.892",
+  "name": "Qumrhra",
+  "say": "q·OOM-rhrah",
+  "sounds": [
+   "q",
+   "rh"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:graaff reinet:-32.252:24.531",
+  "name": "Robert Sobukwe Town",
+  "say": "ROB-ert saw-BOO-kweh town",
+  "sounds": [],
+  "meaning": "Honours Robert Mangaliso Sobukwe, who was born here, anti-apartheid leader and founding president of the Pan Africanist Congress (PAC).",
+  "formerNameOrigin": "Graaff-Reinet was named after Cape governor Cornelis Jacob van de Graaff and his wife.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Graaff-Reinet",
+   "https://businesstech.co.za/news/government/850166/east-london-and-graaff-reinet-are-officially-no-more/"
+  ]
+ },
+ {
+  "key": "asset:bochum:-23.286:29.140",
+  "name": "Senwabarwana",
+  "say": "seh-nwah-bah-RWAH-nah",
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:grootvlei:-26.762:28.484",
+  "name": "Thaba-Kgwali",
+  "say": "TAH-bah KGWAH-lee",
+  "sounds": [
+   "aspirated",
+   "kg"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:ladysmith:-28.559:29.779",
+  "name": "uMnambithi",
+  "say": "oo-m-nahm-BEE-tee",
+  "sounds": [
+   "m",
+   "aspirated"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Ladysmith (1850) was named after Juana María de los Dolores de León Smith, wife of governor Sir Harry Smith.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ladysmith,_KwaZulu-Natal"
+  ]
+ },
+ {
+  "key": "asset:vanderkloof dam:-29.992:24.732",
+  "name": "Vanderkloof Dam",
+  "say": null,
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Vanderkloof_Dam"
+  ]
+ },
+ {
+  "key": "asset:aberdeen:-32.476:24.065",
+  "name": "Xamdeboo",
+  "say": "x·ahm-deh-BOO",
+  "sounds": [
+   "x"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:middledrift:-32.819:26.988",
+  "name": "Xesi",
+  "say": "x·EH-see",
+  "sounds": [
+   "x"
+  ],
+  "meaning": null,
+  "formerNameOrigin": null,
+  "sources": []
+ },
+ {
+  "key": "asset:mamafubedu:-27.666:28.131",
+  "name": "Mamafubedu",
+  "say": "mah-mah-foo-BEH-doo",
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": "The town was to be called Concordia, but Petrus Paulus Steyn's widow sold the land on condition that it was named after her late husband.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Petrus_Steyn"
+  ]
+ },
+ {
+  "key": "asset:hlohlolwane:-28.916:27.570",
+  "name": "Hlohlolwane",
+  "say": "hloh-hloh-LWAH-neh",
+  "sounds": [
+   "hl"
+  ],
+  "meaning": "From Sesotho words meaning 'get up and fight', after a dispute between the Bakwena and Baphuthi over a maize harvest.",
+  "formerNameOrigin": "Clocolan is how newer residents said 'Hlohlolwane'.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Clocolan"
+  ]
+ },
+ {
+  "key": "asset:winnie mandela:-28.700:26.458",
+  "name": "Winnie Mandela",
+  "say": "WIN-ee man-DEH-lah",
+  "sounds": [],
+  "meaning": "Honours Winnie Madikizela-Mandela, who was banished to the town in 1977. Her house there is now a museum.",
+  "formerNameOrigin": "Brandfort was named after Johannes Brand, President of the Orange Free State, who visited soon after the town was founded in 1874.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Brandfort"
+  ]
+ },
+ {
+  "key": "asset:tlokoeng:-30.693:28.506",
+  "name": "Tlokoeng",
+  "say": "tloh-KWENG",
+  "sounds": [],
+  "meaning": "Sesotho for 'place of the Tlokoa clan'.",
+  "formerNameOrigin": "Mount Fletcher was named after the nearby mountain, probably after Reverend John Fletcher, a friend of John Wesley.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Tlokoeng"
+  ]
+ },
+ {
+  "key": "asset:morgan's bay:-32.704:28.336",
+  "name": "Gxarha",
+  "say": "gx·AH-rhah",
+  "sounds": [
+   "x",
+   "rh"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Morgan's Bay was named in 1822 after A. F. Morgan, master of the survey ship Barracouta.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Morgan_Bay"
+  ]
+ },
+ {
+  "key": "asset:solomon linda:-28.554:30.426",
+  "name": "Solomon Linda",
+  "say": "SOL-oh-mon LIN-dah",
+  "sounds": [],
+  "meaning": "Honours Solomon Linda, the musician born here, a pioneer of isicathamiya choral music.",
+  "formerNameOrigin": "Pomeroy was named after Sir George Pomeroy Colley, the British commander at the Battle of Majuba Hill in 1881.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Pomeroy,_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:adendorp:-32.303:24.547",
+  "name": "Bishop Limba",
+  "say": "BISH-op LEEM-bah",
+  "sounds": [],
+  "meaning": null,
+  "formerNameOrigin": "Adendorp was named after N. J. Adendorff, who owned the farm and divided it into smallholdings around 1858.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Adendorp"
+  ]
+ },
+ {
+  "key": "asset:melmoth:-28.587:31.398",
+  "name": "eMthonjaneni",
+  "say": "eh-m-toh-njah-NEH-nee",
+  "sounds": [
+   "m"
+  ],
+  "meaning": null,
+  "formerNameOrigin": "Melmoth was named after Sir Melmoth Osborn, the British resident commissioner of Zululand.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Melmoth,_South_Africa"
+  ]
+ },
+ {
+  "key": "asset:ntshingwayo dam:-27.993:29.884",
+  "name": "Ntshingwayo Dam",
+  "say": null,
+  "sounds": [],
+  "meaning": "Honours Inkosi Ntshingwayo kaMahole Khoza, a senior general in King Cetshwayo's army who commanded at the Battle of Isandlwana in 1879.",
+  "formerNameOrigin": null,
+  "sources": [
+   "https://www.dws.gov.za/Communications/MinisterSpeeches/Kasrils/2000/Ntshingwayo-Dam-Speech.pdf"
+  ]
+ }
+]

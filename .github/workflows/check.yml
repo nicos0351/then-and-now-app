@@ -1,0 +1,26 @@
+name: Check the app
+
+# Runs on every push: the same checks as `flutter analyze` and `flutter test`
+# on your PC, so mistakes are caught before a zip is sent. Nothing is built
+# or published, and no keys are needed.
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - run: flutter --version
+      - run: flutter pub get
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos
+      - name: Test
+        run: flutter test
