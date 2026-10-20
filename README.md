@@ -16,7 +16,13 @@ name isn't currently showing.
   `tools/places/` in the data repository). 18 of them were renamed (e.g. Jan
   Smuts → O. R. Tambo International Airport, Hendrik Verwoerd Dam → Gariep
   Dam); the rest show as plain pins. They have
-  `"kind": "airport" | "dam" | "pass"` and their own pin shapes. Only
+  `"kind": "airport" | "dam" | "pass"` and their own pin shapes.
+- `assets/place_facts.json` + `lib/models/place_facts.dart`,
+  `lib/widgets/place_facts_section.dart` — **facts** for airports (codes,
+  height, who runs it, year opened), dams (river, year, capacity, wall
+  height and type) and passes (height, range, road, surface), shown with
+  Then & Now Plus (data version 8; built by `tools/places/build_facts.py` in
+  the data repository from Wikidata, OpenStreetMap and Wikipedia) Only
   towns count for "Where am I?". The towns are merged
   from two sources:
   - [GeoNames](https://www.geonames.org) (`cities500`, all ZA populated

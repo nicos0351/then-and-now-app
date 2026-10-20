@@ -86,7 +86,9 @@ class AboutScreen extends StatelessWidget {
             icon: Icons.flight_outlined,
             title: 'Data © OpenStreetMap contributors',
             subtitle: 'Airports, dams and mountain passes from OpenStreetMap, available under the '
-                'Open Database Licence (ODbL), with dam and pass lists checked against Wikipedia.',
+                'Open Database Licence (ODbL), with dam and pass lists checked against Wikipedia. '
+                'Their facts (heights, capacities, rivers, codes) come from Wikidata (CC0), '
+                'OpenStreetMap and Wikipedia.',
             url: 'https://www.openstreetmap.org/copyright',
           ),
           const _SectionHeader('Name changes'),
