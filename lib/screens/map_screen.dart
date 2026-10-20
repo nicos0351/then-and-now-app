@@ -13,6 +13,7 @@ import '../config/offline_maps.dart';
 import '../config/test_mode.dart';
 import '../models/map_outline.dart';
 import '../models/name_story.dart';
+import '../models/place_facts.dart';
 import '../models/town.dart';
 import '../services/database_helper.dart';
 import '../services/location_service.dart';
@@ -24,6 +25,7 @@ import '../utils/refresh_time.dart';
 import '../widgets/app_promo_card.dart';
 import '../widgets/map_attribution.dart';
 import '../widgets/name_story_section.dart';
+import '../widgets/place_facts_section.dart';
 import '../widgets/plus_teaser.dart';
 import '../widgets/share_card.dart';
 import '../widgets/timeline_panel.dart';
@@ -114,6 +116,9 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
 
   /// Name stories and pronunciation guides, keyed by town key.
   Map<String, NameStory> _stories = const {};
+
+  /// Facts about airports, dams and passes (Plus), keyed by place key.
+  Map<String, PlaceFacts> _facts = const {};
 
   /// Province/neighbour outline drawn under the tiles (shows where tiles
   /// can't load). Empty until loaded; the map works without it.
@@ -383,6 +388,13 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
     } catch (e) {
       debugPrint('Could not load name stories: $e');
     }
+    // Facts are extra too.
+    Map<String, PlaceFacts> facts = const {};
+    try {
+      facts = await RemoteDataService.instance.cachedFactsIfNewer() ?? await PlaceFacts.loadAll();
+    } catch (e) {
+      debugPrint('Could not load place facts: $e');
+    }
     final lastRefreshed = await RemoteDataService.instance.lastRefreshed();
     final dataVersion = await DatabaseHelper.instance.dataVersion();
     if (!mounted) return;
@@ -390,6 +402,7 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
       _towns = towns;
       _townsRevision++;
       _stories = stories;
+      _facts = facts;
       _lastRefreshed = lastRefreshed;
       _dataVersion = dataVersion;
     });
@@ -502,6 +515,9 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
 
   /// The name story for [town], if there is one and it still matches the
   /// town's current name (a user may have renamed it since).
+  /// Facts for an airport, dam or pass (towns have none).
+  PlaceFacts? _factsFor(Town town) => town.isTown || town.sourceKey == null ? null : _facts[town.sourceKey];
+
   NameStory? _storyFor(Town town) {
     final key = town.sourceKey;
     if (key == null) return null;
@@ -661,6 +677,7 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
         town: town,
         showOldNames: _isShowingOldName(town),
         story: _storyFor(town),
+        facts: _factsFor(town),
         isPlus: _isPlus,
       ),
     );
@@ -675,7 +692,8 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
         await _openPaywall();
       } else {
         // The same info, the same way round, as the sheet just showed.
-        await showShareCard(context, town: town, story: _storyFor(town), showOldNames: _isShowingOldName(town));
+        await showShareCard(context,
+            town: town, story: _storyFor(town), facts: _factsFor(town), showOldNames: _isShowingOldName(town));
       }
       return;
     }
@@ -1181,11 +1199,23 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
 }
 
 class _TownDetailSheet extends StatelessWidget {
-  const _TownDetailSheet({required this.town, required this.showOldNames, this.story, required this.isPlus});
+  const _TownDetailSheet(
+      {required this.town, required this.showOldNames, this.story, this.facts, required this.isPlus});
 
   final Town town;
   final bool showOldNames;
   final NameStory? story;
+
+  /// Airport, dam or pass facts, if there are any.
+  final PlaceFacts? facts;
+
+  /// What the facts are, in a few words, for the Plus teaser.
+  static String _factsTeaser(Town town) => switch (town.kind) {
+        'airport' => 'Airport codes, height above sea level and who runs it',
+        'dam' => 'The river, when it was built, its capacity and wall height',
+        'pass' => 'Height at the top, mountain range, road and surface',
+        _ => 'Facts about this place',
+      };
 
   /// Free users see a teaser instead of the name story and pronunciation.
   final bool isPlus;
@@ -1305,10 +1335,22 @@ class _TownDetailSheet extends StatelessWidget {
             ],
           ] else
             Text(
-              'No name change is on record for this town. '
+              'No name change is on record for this ${town.kindLabel?.toLowerCase() ?? 'town'}. '
               'Tap the edit icon above if you know one.',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
+          // Airports, dams and passes: facts (Plus), after the name history.
+          if (facts != null) ...[
+            const Divider(height: 28),
+            if (isPlus)
+              PlaceFactsSection(facts: facts!)
+            else
+              PlusTeaser(
+                title: 'Facts about this ${town.kindLabel?.toLowerCase() ?? 'place'}',
+                text: '${_factsTeaser(town)} are part of $kPlusName.',
+                onUnlock: () => Navigator.of(context).pop('plus'),
+              ),
+          ],
         ],
       ),
     );
@@ -1510,7 +1552,7 @@ class _HelpText extends StatelessWidget {
     (Icons.zoom_in, 'Pinch with two fingers to zoom, and drag with one finger to move the map.'),
     (Icons.zoom_out_map, 'The button at the top right takes you back to the whole of South Africa.'),
     (Icons.location_on, 'Red pins are places with a name change on record. Blue-grey pins have none on record yet.'),
-    (Icons.local_airport, 'Airports, dams and mountain passes have their own pin shapes.'),
+    (Icons.local_airport, 'Airports, dams and mountain passes have their own pin shapes. With $kPlusName, tapping one shows facts such as its height, river or capacity.'),
     (Icons.touch_app_outlined, 'Tap a pin to see when the place was renamed. With $kPlusName you see its previous name, what the new name means and how to say it.'),
     (Icons.update, 'With $kPlusName, the button at the bottom switches the whole map between current and previous names.'),
     (Icons.filter_alt_outlined, '"Renamed towns only" (top left) hides places without a name change. It is on each time the app opens; tap it to see every town.'),

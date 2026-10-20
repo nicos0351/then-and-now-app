@@ -24,7 +24,7 @@ class PurchaseEvent {
 
 /// Manages the app's one-time (non-consumable) purchases. The core app is
 /// free; two separate upgrades can be bought:
-///  - **Then & Now Plus** ([productId]): name stories & pronunciation,
+///  - **Then & Now Plus** ([productId]): name stories & pronunciation, facts about airports, dams and passes,
 ///    recording / adding names.
 ///  - **Offline Maps** ([offlineProductId], higher price): download map
 ///    packs to use the map with no signal. Only offered when

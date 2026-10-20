@@ -9,6 +9,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/name_story.dart';
+import '../models/place_facts.dart';
 import '../models/town.dart';
 import '../utils/provinces.dart';
 import 'database_helper.dart';
@@ -41,6 +42,7 @@ class RemotePayload {
     required this.changes,
     required this.towns,
     required this.storiesJson,
+    this.factsJson = const [],
   });
 
   final int dataVersion;
@@ -50,6 +52,10 @@ class RemotePayload {
 
   /// The raw `stories` list, cached to disk as-is.
   final List<dynamic> storiesJson;
+
+  /// The raw `facts` list (airports, dams, passes), cached to disk as-is.
+  /// Older data files have none.
+  final List<dynamic> factsJson;
 
   static dynamic _decode(String body) {
     try {
@@ -112,6 +118,16 @@ class RemotePayload {
       }
     }
 
+    final rawFacts = decoded['facts'] ?? const [];
+    if (rawFacts is! List) throw const FormatException('The update file has a broken facts list.');
+    for (final raw in rawFacts) {
+      try {
+        PlaceFacts.fromJson(raw as Map<String, dynamic>);
+      } catch (_) {
+        throw const FormatException('The update file has a broken facts entry.');
+      }
+    }
+
     final changes = <DataChange>[];
     for (final raw in (decoded['changes'] as List<dynamic>? ?? const [])) {
       if (raw is Map<String, dynamic> && raw['version'] is int && raw['summary'] is String) {
@@ -125,6 +141,7 @@ class RemotePayload {
       changes: changes,
       towns: towns,
       storiesJson: rawStories,
+      factsJson: rawFacts,
     );
   }
 }
@@ -157,6 +174,7 @@ class RemoteDataService {
 
   static const _lastCheckKey = 'remote_data_last_check_ms';
   static const _storiesFile = 'remote_stories.json';
+  static const _factsFile = 'remote_facts.json';
 
   bool _busy = false;
 
@@ -186,6 +204,7 @@ class RemoteDataService {
 
       await db.applyTownData(payload.towns, payload.dataVersion);
       await _saveStories(payload.dataVersion, payload.storiesJson);
+      await _saveFacts(payload.dataVersion, payload.factsJson);
       final news = payload.changes.where((c) => c.version > local).toList()
         ..sort((a, b) => a.version.compareTo(b.version));
       return RefreshResult(
@@ -252,6 +271,33 @@ class RemoteDataService {
   Future<void> _saveStories(int version, List<dynamic> stories) async {
     final file = await _storiesPath();
     await file.writeAsString(json.encode({'dataVersion': version, 'stories': stories}), flush: true);
+  }
+
+  Future<File> _factsPath() async {
+    final dir = await getApplicationSupportDirectory();
+    return File('${dir.path}/$_factsFile');
+  }
+
+  Future<void> _saveFacts(int version, List<dynamic> facts) async {
+    final file = await _factsPath();
+    await file.writeAsString(json.encode({'dataVersion': version, 'facts': facts}), flush: true);
+  }
+
+  /// Airport, dam and pass facts from the last downloaded update, if
+  /// they're newer than the ones bundled with this app version; otherwise
+  /// null (use the bundled ones).
+  Future<Map<String, PlaceFacts>?> cachedFactsIfNewer() async {
+    try {
+      final file = await _factsPath();
+      if (!await file.exists()) return null;
+      final decoded = json.decode(await file.readAsString()) as Map<String, dynamic>;
+      final version = decoded['dataVersion'] as int? ?? 0;
+      if (version <= DatabaseHelper.seedVersion) return null;
+      return PlaceFacts.parseList(decoded['facts'] as List<dynamic>);
+    } catch (e) {
+      debugPrint('Ignoring cached facts: $e');
+      return null;
+    }
   }
 
   /// Name stories from the last downloaded update, if they're newer than

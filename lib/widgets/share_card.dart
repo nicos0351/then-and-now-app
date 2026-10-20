@@ -6,6 +6,7 @@ import 'package:share_plus/share_plus.dart';
 
 import '../config/app_info.dart';
 import '../models/name_story.dart';
+import '../models/place_facts.dart';
 import '../models/town.dart';
 import '../utils/town_info.dart';
 
@@ -103,6 +104,7 @@ class TownInfoCard extends StatelessWidget {
       case InfoKind.name:
         return Text(line.text, style: const TextStyle(fontSize: 22, height: 1.2, fontWeight: FontWeight.w700, color: _ink));
       case InfoKind.body:
+      case InfoKind.fact:
         return Padding(
           padding: const EdgeInsets.only(top: 4),
           child: Text(line.text, style: const TextStyle(fontSize: 13.5, height: 1.35, color: _ink)),
@@ -119,17 +121,19 @@ class TownInfoCard extends StatelessWidget {
 /// Shows a preview of the town's info card with a Share button. The
 /// picture and the message both carry exactly what the town sheet shows;
 /// pass the same [showOldNames] the sheet was opened with.
-Future<void> showShareCard(BuildContext context, {required Town town, NameStory? story, bool showOldNames = false}) {
+Future<void> showShareCard(BuildContext context,
+    {required Town town, NameStory? story, PlaceFacts? facts, bool showOldNames = false}) {
   return showDialog<void>(
     context: context,
-    builder: (context) => _ShareCardDialog(town: town, story: story, showOldNames: showOldNames),
+    builder: (context) => _ShareCardDialog(town: town, story: story, facts: facts, showOldNames: showOldNames),
   );
 }
 
 class _ShareCardDialog extends StatefulWidget {
-  const _ShareCardDialog({required this.town, this.story, required this.showOldNames});
+  const _ShareCardDialog({required this.town, this.story, this.facts, required this.showOldNames});
   final Town town;
   final NameStory? story;
+  final PlaceFacts? facts;
   final bool showOldNames;
 
   @override
@@ -140,7 +144,7 @@ class _ShareCardDialogState extends State<_ShareCardDialog> {
   final _cardKey = GlobalKey();
   bool _sharing = false;
   late final List<InfoLine> _lines =
-      townInfo(widget.town, story: widget.story, showOldNames: widget.showOldNames);
+      townInfo(widget.town, story: widget.story, facts: widget.facts, showOldNames: widget.showOldNames);
 
   Future<void> _share(BuildContext buttonContext) async {
     setState(() => _sharing = true);

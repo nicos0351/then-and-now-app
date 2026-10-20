@@ -45,7 +45,9 @@ class DatabaseHelper {
   //     Bela-Bela spelling, full Louis Trichardt story
   //  7: all of South Africa's airports, dams and mountain passes
   //     (OpenStreetMap), 11 more renames among them
-  static const int seedVersion = 7;
+  //  8: facts for airports, dams and passes (`facts`, in its own asset);
+  //     duplicate Gariep Dam pin removed
+  static const int seedVersion = 8;
 
   Database? _db;
 

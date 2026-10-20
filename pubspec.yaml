@@ -35,6 +35,7 @@ flutter:
   assets:
     - assets/towns.json
     - assets/name_stories.json
+    - assets/place_facts.json
     - assets/sa_outline.json
     - assets/icon/app_icon.png
 

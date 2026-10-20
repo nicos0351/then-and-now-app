@@ -18823,21 +18823,6 @@
   "source": "https://www.openstreetmap.org/way/174303308"
  },
  {
-  "key": "asset:gariep dam:-30.633:25.718",
-  "kind": "dam",
-  "name": "Gariep Dam",
-  "oldName": "Gariep Dam",
-  "hasKnownRename": false,
-  "renamedYear": null,
-  "reverted": false,
-  "notes": null,
-  "province": "Free State",
-  "latitude": -30.63294,
-  "longitude": 25.718,
-  "population": 0,
-  "source": "https://www.openstreetmap.org/relation/2313297"
- },
- {
   "key": "asset:lake arthur:-32.212:25.814",
   "kind": "dam",
   "name": "Lake Arthur",

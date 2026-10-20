@@ -1,5 +1,6 @@
 import '../config/app_info.dart';
 import '../models/name_story.dart';
+import '../models/place_facts.dart';
 import '../models/town.dart';
 import 'sound_guide.dart';
 
@@ -24,8 +25,11 @@ enum InfoKind {
   /// Small print: notes, sound tips and sources.
   small,
 
-  /// Space between the name part and the name story.
+  /// Space between the name part and the name story or facts.
   divider,
+
+  /// One fact about an airport, dam or pass: "River: Vaal River".
+  fact,
 }
 
 class InfoLine {
@@ -42,7 +46,7 @@ class InfoLine {
 /// A town's info exactly as the town sheet shows it to a Plus user, so
 /// sharing sends what's on the screen. [showOldNames] is whether the map
 /// is showing previous names (the headline then shows the previous name).
-List<InfoLine> townInfo(Town town, {NameStory? story, required bool showOldNames}) {
+List<InfoLine> townInfo(Town town, {NameStory? story, PlaceFacts? facts, required bool showOldNames}) {
   final lines = <InfoLine>[
     InfoLine(InfoKind.title, town.displayName(showOldNames)),
     InfoLine(InfoKind.subtitle, town.kindLabel == null ? town.province : '${town.kindLabel} · ${town.province}'),
@@ -62,7 +66,7 @@ List<InfoLine> townInfo(Town town, {NameStory? story, required bool showOldNames
     if (when != null) lines.add(InfoLine(InfoKind.body, when));
     if (town.notes != null) lines.add(InfoLine(InfoKind.small, town.notes!));
   } else {
-    lines.add(const InfoLine(InfoKind.body, 'No name change is on record for this town.'));
+    lines.add(InfoLine(InfoKind.body, 'No name change is on record for this ${town.kindLabel?.toLowerCase() ?? 'town'}.'));
   }
 
   if (revealed != null && story != null) {
@@ -92,6 +96,21 @@ List<InfoLine> townInfo(Town town, {NameStory? story, required bool showOldNames
           links: story.sources));
     }
   }
+
+  // Airports, dams and passes: the facts, after the name history (as in
+  // the sheet).
+  if (facts != null) {
+    lines
+      ..add(const InfoLine(InfoKind.divider, ''))
+      ..add(const InfoLine(InfoKind.label, 'Facts'));
+    for (final (label, value) in facts.facts) {
+      lines.add(InfoLine(InfoKind.fact, '$label: $value'));
+    }
+    if (facts.sources.isNotEmpty) {
+      lines.add(InfoLine(InfoKind.small, 'Source: ${facts.sources.map(sourceLabel).join(', ')}',
+          links: facts.sources));
+    }
+  }
   return lines;
 }
 
@@ -107,6 +126,7 @@ String townInfoText(List<InfoLine> lines) {
       case InfoKind.subtitle:
       case InfoKind.name:
       case InfoKind.body:
+      case InfoKind.fact:
         out.writeln(line.text);
       case InfoKind.small:
         out.writeln(line.links.isEmpty ? line.text : 'Source: ${line.links.join(' ')}');

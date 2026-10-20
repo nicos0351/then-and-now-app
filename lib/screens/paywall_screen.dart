@@ -211,6 +211,11 @@ class _PaywallScreenState extends State<PaywallScreen> {
           'What each new name means or who it honours, where the old name came from, and how to say it.',
         ),
         const _PlusFeature(
+          Icons.fact_check_outlined,
+          'Facts about airports, dams and passes',
+          'Airport codes and height, a dam\'s river, capacity and wall height, and a pass\'s height, road and surface.',
+        ),
+        const _PlusFeature(
           Icons.edit_location_alt_outlined,
           'Record & add names',
           'Record a new name change, fix an old name, or add a place that\'s missing.',
