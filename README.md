@@ -71,7 +71,9 @@ name isn't currently showing.
     circles) and **About & credits**
   - until someone taps **Got it** in Help, a flashing card in the middle of
     the map says they haven't read it yet (tapping it opens Help). If Help
-    was opened but closed without "Got it", it opens by itself the next
+    can only be closed with its big **Got it – start using the app**
+    button (tapping outside it or the back button do nothing). If Help
+    was opened but the app was closed without "Got it", it opens by itself the next
     time the app is opened (or comes back after more than a minute in the
     background). The answers are saved on the phone (`help_read`,
     `help_opened_unread`); clearing the app's data or reinstalling starts

@@ -735,22 +735,38 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
     if (_helpShowing) return;
     _helpShowing = true;
     _markHelpOpened();
+    // "Got it" is the only way out: tapping outside or the back button do
+    // nothing, so nobody closes Help by accident and then wonders why it
+    // keeps coming back. The button stays in view below the scrolling text.
     await showDialog<void>(
       context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Help'),
-        content: const SingleChildScrollView(
-          child: _HelpText(),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-              _markHelpRead();
-            },
-            child: const Text('Got it'),
+      barrierDismissible: false,
+      builder: (context) => PopScope(
+        canPop: false,
+        child: AlertDialog(
+          title: const Text('Help'),
+          content: const SingleChildScrollView(
+            child: _HelpText(),
           ),
-        ],
+          actionsPadding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+          actions: [
+            SizedBox(
+              width: double.infinity,
+              child: FilledButton.icon(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  _markHelpRead();
+                },
+                style: FilledButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                ),
+                icon: const Icon(Icons.check_circle_outline),
+                label: const Text('Got it – start using the app'),
+              ),
+            ),
+          ],
+        ),
       ),
     );
     _helpShowing = false;
@@ -1523,6 +1539,25 @@ class _HelpText extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // Says up front how to close Help (the only way is "Got it").
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primaryContainer,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: const Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(text: 'Have a quick read, then tap '),
+                TextSpan(text: 'Got it', style: TextStyle(fontWeight: FontWeight.bold)),
+                TextSpan(text: ' at the bottom to start.'),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 12),
         const Text(
           'See South Africa\'s towns under their current names and, where a town has been renamed, '
           'under its previous name.',
