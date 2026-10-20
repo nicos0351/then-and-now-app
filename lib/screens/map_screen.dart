@@ -28,6 +28,7 @@ import '../widgets/name_story_section.dart';
 import '../widgets/dam_level_tile.dart';
 import '../widgets/place_facts_section.dart';
 import '../widgets/plus_teaser.dart';
+import '../widgets/scroll_more_hint.dart';
 import '../widgets/share_card.dart';
 import '../widgets/timeline_panel.dart';
 import '../widgets/where_am_i_sheet.dart';
@@ -785,8 +786,9 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
         canPop: false,
         child: AlertDialog(
           title: const Text('Help'),
-          content: const SingleChildScrollView(
-            child: _HelpText(),
+          content: ScrollWithMoreHint(
+            fadeColor: Theme.of(context).colorScheme.surfaceContainerHigh,
+            child: const _HelpText(),
           ),
           actionsPadding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
           actions: [
@@ -1258,8 +1260,9 @@ class _TownDetailSheet extends StatelessWidget {
 
     final story = this.story;
 
-    // Scrolls when a name story makes the sheet taller than the screen allows.
-    return SingleChildScrollView(
+    // Scrolls when a name story makes the sheet taller than the screen
+    // allows, with a "More below" marker so people know to.
+    return ScrollWithMoreHint(
       // Clear of the phone's navigation bar now the sheet can be tall.
       padding: EdgeInsets.fromLTRB(20, 0, 20, 20 + MediaQuery.viewPaddingOf(context).bottom),
       child: Column(
