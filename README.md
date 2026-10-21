@@ -1,4 +1,4 @@
-# Then & Now: SA Town Names — Flutter App
+# Then & Now: SA Place Names — Flutter App
 
 *Old and new names on one map.*
 
@@ -216,10 +216,10 @@ Store listings:
 
 | Field | Value |
 |---|---|
-| App Store name (max 30) | Then & Now: SA Town Names |
+| App Store name (max 30) | Then & Now: SA Place Names |
 | App Store subtitle (max 30) | Old and new names on one map |
-| Google Play app name (max 30) | Then & Now: SA Town Names |
-| Google Play short description (max 80) | See South African towns under their old and new names on one map. |
+| Google Play app name (max 30) | Then & Now: SA Place Names |
+| Google Play short description (max 80) | Old and new names of SA towns, airports, dams and mountain passes on one map. |
 
 Before you publish, search both stores and the CIPC trademark register
 to make sure no one else is using the name or something close to it.
@@ -517,7 +517,7 @@ exactly where in `_onPurchaseUpdates`).
 **Offline Maps** is a separate one-time purchase, priced above Plus (think
 R79–R99). It lets people download **map packs** — the actual map picture,
 roads, rivers and terrain — so the map works with no signal and no data
-costs. Town names, stories, the timeline and "Where am I?" already work
+costs. Place names, stories, the timeline and "Where am I?" already work
 offline for everyone; this add-on is only about the map underneath.
 
 ### It's switched off until packs exist

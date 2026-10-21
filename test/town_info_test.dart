@@ -51,6 +51,6 @@ void main() {
     for (final url in story.sources) {
       expect(text, contains(url));
     }
-    expect(text, contains('Shared from Then & Now: SA Town Names'));
+    expect(text, contains('Shared from Then & Now: SA Place Names'));
   });
 }

@@ -177,7 +177,7 @@ class _OfflineMapsScreenState extends State<OfflineMapsScreen> {
         children: [
           Text(
             'Download the map for areas you\'re travelling to, and it works with no signal and '
-            'no data costs - roads, rivers and terrain included. Town names, stories and '
+            'no data costs - roads, rivers and terrain included. Place names, stories and '
             '"Where am I?" already work offline.',
             style: theme.textTheme.bodyMedium,
           ),

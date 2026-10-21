@@ -46,7 +46,7 @@ class AboutScreen extends StatelessWidget {
             title: Text('Last refreshed: ${describeLastRefresh(lastRefreshed, DateTime.now())}'),
             subtitle: Text(
               lastRefreshed == null
-                  ? 'Showing the town names that came with the app (data version $dataVersion). '
+                  ? 'Showing the place names that came with the app (data version $dataVersion). '
                       'Use ⋮ → Refresh data on the map to get the latest names.'
                   : 'Data version $dataVersion. Use ⋮ → Refresh data on the map to check for newer names.',
             ),
@@ -107,7 +107,7 @@ class AboutScreen extends StatelessWidget {
               'Changes you record yourself in the app are marked with a person icon and stay on this device. '
               '"Where am I?" uses your location only on this phone to find the nearest town - it is never '
               'stored or sent anywhere. About once a week (or when you tap Refresh data) the app downloads '
-              'the latest town names from GitHub; nothing about you is sent.',
+              'the latest place names from GitHub; nothing about you is sent.',
               style: textTheme.bodySmall,
             ),
           ),

@@ -241,7 +241,7 @@ class RemoteDataService {
     } on FormatException catch (e) {
       debugPrint('Rejected update file: ${e.message}');
       return const RefreshResult(RefreshStatus.failed,
-          message: "The update file couldn't be used, so your current town names were kept. "
+          message: "The update file couldn't be used, so your current place names were kept. "
               'Please try again later.');
     } catch (e) {
       debugPrint('Update check failed: $e');

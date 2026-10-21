@@ -450,7 +450,7 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: const Text('Town names have been updated.'),
+        content: const Text('Place names have been updated.'),
         duration: const Duration(seconds: 6),
         action: SnackBarAction(label: "What's new", onPressed: () => _showWhatsNew(result)),
       ),
@@ -483,7 +483,7 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
         break;
       case RefreshStatus.upToDate:
         messenger.showSnackBar(SnackBar(
-          content: Text('You have the latest town names (data version ${result.version}).'),
+          content: Text('You have the latest place names (data version ${result.version}).'),
         ));
         break;
       case RefreshStatus.failed:
@@ -496,14 +496,14 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
     showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Town names updated'),
+        title: const Text('Place names updated'),
         content: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (result.changes.isEmpty)
-                const Text('The map now has the latest town names.')
+                const Text('The map now has the latest place names.')
               else
                 for (final change in result.changes)
                   Padding(
@@ -859,7 +859,7 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
                   },
           ),
           PopupMenuButton<String>(
-            tooltip: isRefreshStale(_lastRefreshed, DateTime.now()) ? 'More (town names need a refresh)' : 'More',
+            tooltip: isRefreshStale(_lastRefreshed, DateTime.now()) ? 'More (place names need a refresh)' : 'More',
             // A small dot when the town data hasn't been refreshed for a month.
             icon: Badge(
               isLabelVisible: !_loading && isRefreshStale(_lastRefreshed, DateTime.now()),
@@ -1611,7 +1611,7 @@ class _HelpText extends StatelessWidget {
     (Icons.timeline, 'The timeline button (top) lets you slide or play through the years and watch the names change. The "Then" stop at the start, with every previous name, is part of $kPlusName.'),
     (Icons.search, 'Search finds any town by its current name and takes you there. With $kPlusName it finds old names too.'),
     (Icons.share_outlined, 'With $kPlusName, the share button on a renamed town sends its info, as shown, as a picture and a message.'),
-    (Icons.sync, '⋮ → Refresh data gets the latest town names, and shows when you last did it.'),
+    (Icons.sync, '⋮ → Refresh data gets the latest place names, and shows when you last did it.'),
     (Icons.share_outlined, 'The share button in the top bar tells friends about the app and where to get it.'),
     (Icons.edit_outlined, 'With $kPlusName, the pencil on a place lets you record a new name change or fix an old name.'),
     (Icons.add_location_alt_outlined, 'With $kPlusName, long-press an empty spot on the map to add a place that\'s missing.'),
@@ -1621,7 +1621,7 @@ class _HelpText extends StatelessWidget {
       (Icons.workspace_premium_outlined, '⋮ → $kPlusName: a one-time purchase for previous names, name stories and recording names.'),
       (Icons.download_for_offline_outlined, '⋮ → $kOfflineName: a separate one-time purchase to download maps for use with no signal.'),
     ],
-    (Icons.map_outlined, 'No signal? Town names still work, and a plain outline of the provinces shows where the map can\'t load.'),
+    (Icons.map_outlined, 'No signal? Place names still work, and a plain outline of the provinces shows where the map can\'t load.'),
     (Icons.person, 'A person icon means you added or edited that town yourself. Those changes stay on your phone.'),
   ];
 

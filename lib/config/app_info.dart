@@ -7,7 +7,7 @@
 library;
 
 /// Full name: store listing title, About screen, paywall.
-const String kAppName = 'Then & Now: SA Town Names';
+const String kAppName = 'Then & Now: SA Place Names';
 
 /// Short name for tight spots: the top bar and the phone's home screen.
 const String kAppShortName = 'Then & Now';
@@ -43,4 +43,4 @@ const String kAppStoreId = '';
 const bool kOnAppStore = true;
 
 /// What to type in the store's search box to find the app.
-const String kStoreSearchText = 'Then & Now SA Town Names';
+const String kStoreSearchText = 'Then & Now SA Place Names';

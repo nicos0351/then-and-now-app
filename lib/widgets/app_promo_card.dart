@@ -54,7 +54,7 @@ class AppPromoCard extends StatelessWidget {
                       children: [
                         Text('Then & Now',
                             style: TextStyle(fontSize: 28, height: 1.05, fontWeight: FontWeight.w800, color: _ink)),
-                        Text('SA Town Names', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: _nowColour)),
+                        Text('SA Place Names', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: _nowColour)),
                       ],
                     ),
                   ),
