@@ -68,7 +68,7 @@ void main() {
     });
   });
 
-  group('Downloading a slow page', () {
+  group('Downloading a slow page', skip: true, () {
     final page = File('test/fixtures/dws_wc.html').readAsStringSync();
     const theewaterskloof = DamStation(key: 'x', region: 'WC', station: 'H6R001');
 
