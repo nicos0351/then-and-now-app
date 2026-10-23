@@ -359,8 +359,11 @@ Notes:
 - A tile API key is built into the app, so anyone can extract it. In your
   provider's dashboard, restrict the key to your app (by app ID / bundle
   ID) and set a usage cap.
-- MapTiler's **free** plan also requires the MapTiler logo on the map;
-  paid plans only need the text credit, which the app already shows.
+- MapTiler's **free** plan also requires the MapTiler logo on the map,
+  linking to maptiler.com. The app shows it at the start of the credit
+  strip whenever the MapTiler maps are used (`lib/widgets/map_attribution.dart`,
+  loaded from MapTiler's own `https://api.maptiler.com/resources/logo.svg`
+  with the package `flutter_svg`). Paid plans only need the text credit.
 - Whatever provider you use, read its terms: the credit text it requires
   goes in `TILE_ATTRIBUTION`, and the in-app credit strip shows it.
 - Tiles are cached on the device (flutter_map's built-in cache, capped at

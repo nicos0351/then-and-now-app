@@ -1,7 +1,7 @@
 name: sa_town_names
 description: "Then & Now: SA Place Names - old and new South African place names (towns, airports, dams, passes) on one map."
 publish_to: 'none'
-version: 1.0.6+9
+version: 1.0.7+10
 
 environment:
   sdk: '>=3.6.0 <4.0.0'
@@ -23,6 +23,7 @@ dependencies:
   share_plus: '>=11.1.0 <14.0.0'  # Share "Then -> Now" cards (WhatsApp etc.)
   in_app_update: '>=4.2.5 <5.0.0'  # Offers new Google Play versions inside the app
   http: ^1.2.0                 # Downloads live town-name updates
+  flutter_svg: '>=2.0.10 <3.0.0'  # MapTiler's logo on the map (required on their free plan)
   flutter_map_mbtiles: ^1.0.4  # Offline Maps add-on: reads downloaded map packs
 
 dev_dependencies:
