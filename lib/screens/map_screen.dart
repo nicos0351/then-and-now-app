@@ -1607,7 +1607,7 @@ class _HelpText extends StatelessWidget {
     (Icons.touch_app_outlined, 'Tap a pin to see when the place was renamed. With $kPlusName you see its previous name, what the new name means and how to say it.'),
     (Icons.update, 'With $kPlusName, the button at the bottom switches the whole map between current and previous names.'),
     (Icons.filter_alt_outlined, '"Renamed towns only" (top left) hides places without a name change. It is on each time the app opens; tap it to see every town.'),
-    (Icons.filter_list, 'The filter button next to it shows all places, or only towns, airports, dams or mountain passes.'),
+    (Icons.filter_list, 'The filter button under it shows all places, or only towns, airports, dams or mountain passes.'),
     (Icons.my_location, 'The target button finds the town you\'re in, and with $kPlusName tells you what it used to be called.'),
     (Icons.timeline, 'The timeline button (top) lets you slide or play through the years and watch the names change. The "Then" stop at the start, with every previous name, is part of $kPlusName.'),
     (Icons.search, 'Search finds any town by its current name and takes you there. With $kPlusName it finds old names too.'),
@@ -1705,7 +1705,7 @@ class _HelpText extends StatelessWidget {
   }
 }
 
-/// The place-type filter (the button next to "Renamed towns only").
+/// The place-type filter (the button under "Renamed towns only").
 enum PlaceFilter {
   all('Show all', 'All places', Icons.layers_outlined),
   towns('Show towns only', 'Towns', Icons.location_city_outlined),
