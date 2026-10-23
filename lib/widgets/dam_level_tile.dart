@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../models/place_facts.dart';
@@ -21,15 +23,48 @@ class DamLevelTile extends StatefulWidget {
 }
 
 class _DamLevelTileState extends State<DamLevelTile> {
-  late Future<DamLevelResult> _result = _load();
+  late Future<DamLevelResult> _result;
+  StreamSubscription<String>? _updates;
+  Timer? _slowTimer;
+  bool _slow = false;
+  bool _failed = false;
 
-  /// The department's site can be very slow, so give up after 30 seconds
-  /// (whatever happens inside) and offer to try again, rather than leave
-  /// the spinner running.
-  Future<DamLevelResult> _load() => DamLevelsService.instance
-      .levelFor(widget.station)
-      .timeout(const Duration(seconds: 30), onTimeout: () => const DamLevelResult.failed(DamLevelProblem.offline))
-      .catchError((Object _) => const DamLevelResult.failed(DamLevelProblem.offline));
+  @override
+  void initState() {
+    super.initState();
+    _result = _load();
+    // A slow answer that arrives after "Try again" was shown: show it.
+    _updates = DamLevelsService.instance.updates.listen((region) {
+      if (_failed && region == widget.station.region && mounted) _retry();
+    });
+  }
+
+  @override
+  void dispose() {
+    _updates?.cancel();
+    _slowTimer?.cancel();
+    super.dispose();
+  }
+
+  /// The service tries twice and gives up after a minute; the timeout here
+  /// is only a safety net so the spinner can never run forever.
+  Future<DamLevelResult> _load() {
+    _failed = false;
+    _slow = false;
+    _slowTimer?.cancel();
+    _slowTimer = Timer(const Duration(seconds: 10), () {
+      if (mounted) setState(() => _slow = true);
+    });
+    return DamLevelsService.instance
+        .levelFor(widget.station)
+        .timeout(const Duration(seconds: 75), onTimeout: () => const DamLevelResult.failed(DamLevelProblem.offline))
+        .catchError((Object _) => const DamLevelResult.failed(DamLevelProblem.offline))
+        .then((result) {
+      _slowTimer?.cancel();
+      _failed = result.level == null && result.problem == DamLevelProblem.offline;
+      return result;
+    });
+  }
 
   void _retry() => setState(() => _result = _load());
 
@@ -48,7 +83,9 @@ class _DamLevelTileState extends State<DamLevelTile> {
                 const SizedBox(width: 10),
                 Expanded(
                   child: Text(
-                    "Checking this week's dam level with the Department of Water and Sanitation…",
+                    _slow
+                        ? "The department's website is slow today. Still trying…"
+                        : "Checking this week's dam level with the Department of Water and Sanitation…",
                     style: theme.textTheme.bodySmall,
                   ),
                 ),

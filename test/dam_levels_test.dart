@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -64,6 +65,65 @@ void main() {
     test('bad entries are rejected', () {
       expect(() => DamStation.fromJson({'key': 'asset:x', 'region': 'XX', 'station': 'H6R001'}), throwsFormatException);
       expect(() => DamStation.fromJson({'key': 'asset:x', 'region': 'WC', 'station': '<script>'}), throwsFormatException);
+    });
+  });
+
+  group('Downloading a slow page', () {
+    final page = File('test/fixtures/dws_wc.html').readAsStringSync();
+    const theewaterskloof = DamStation(key: 'x', region: 'WC', station: 'H6R001');
+
+    DamLevelsService service(DwsPageFetcher fetch) => DamLevelsService.forTest(
+          fetch: fetch,
+          secondTryAfter: const Duration(milliseconds: 50),
+          giveUpAfter: const Duration(milliseconds: 300),
+        );
+
+    test('a first try that hangs is helped by a second one', () async {
+      var calls = 0;
+      final s = service((_) {
+        calls++;
+        return calls == 1 ? Completer<String?>().future : Future.value(page);
+      });
+      final result = await s.levelFor(theewaterskloof);
+      expect(calls, 2);
+      expect(result.level?.thisWeek?.percent, 74.7);
+    });
+
+    test('a first try that fails straight away is tried again', () async {
+      var calls = 0;
+      final s = service((_) async => ++calls == 1 ? null : page);
+      final result = await s.levelFor(theewaterskloof);
+      expect(calls, 2);
+      expect(result.level, isNotNull);
+    });
+
+    test('an answer after giving up is kept and announced', () async {
+      final slow = Completer<String?>();
+      var calls = 0;
+      final s = service((_) => ++calls == 1 ? slow.future : Future<String?>.value(null));
+      final announced = s.updates.first;
+      final first = await s.levelFor(theewaterskloof);
+      expect(first.problem, DamLevelProblem.offline);
+
+      slow.complete(page);
+      expect(await announced, 'WC');
+      // "Try again" (or the sheet itself) now gets it at once, from memory.
+      final again = await s.levelFor(theewaterskloof);
+      expect(again.level?.thisWeek?.percent, 74.7);
+      expect(calls, 2);
+    });
+
+    test('several dams in one province share one download', () async {
+      var calls = 0;
+      final s = service((_) async {
+        calls++;
+        return page;
+      });
+      await Future.wait([
+        s.levelFor(theewaterskloof),
+        s.levelFor(const DamStation(key: 'y', region: 'WC', station: 'H6R001')),
+      ]);
+      expect(calls, 1);
     });
   });
 }

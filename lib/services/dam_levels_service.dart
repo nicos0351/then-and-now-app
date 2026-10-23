@@ -102,17 +102,64 @@ class DamLevelResult {
   final bool fromCache;
 }
 
+/// Fetches one province's page and returns its HTML, or null if the site
+/// didn't give a proper answer. Replaceable in tests.
+typedef DwsPageFetcher = Future<String?> Function(String region);
+
+Future<String?> _fetchFromDws(String region) async {
+  try {
+    final response = await http.get(Uri.parse(dwsPageUrl(region)), headers: const {
+      'User-Agent': 'ThenAndNow-SA-Town-Names (Android app; thenandnow0351@gmail.com)',
+    }).timeout(const Duration(seconds: 90));
+    if (response.statusCode != 200) return null;
+    return utf8.decode(response.bodyBytes, allowMalformed: true);
+  } catch (e) {
+    debugPrint('Could not download dam levels for $region: $e');
+    return null;
+  }
+}
+
 /// Gets a dam's weekly level straight from the department's website, on
 /// the phone (the site doesn't answer servers abroad). Each province's page
 /// is downloaded at most every few hours and kept on the phone, so an older
 /// copy can still be shown without a connection.
+///
+/// The site is often very slow to answer the first request and then quick
+/// to answer the next, so if the first try fails, or hasn't answered after
+/// [secondTryAfter], a second request is sent alongside it; whichever
+/// answers first is used. A try that answers after the app has given up
+/// still saves the page and announces it on [updates], so a sheet that
+/// showed "Try again" can show the level after all.
 class DamLevelsService {
-  DamLevelsService._();
+  DamLevelsService._({
+    DwsPageFetcher? fetch,
+    this.secondTryAfter = const Duration(seconds: 12),
+    this.giveUpAfter = const Duration(seconds: 60),
+    this.useDisk = true,
+  }) : _fetch = fetch ?? _fetchFromDws;
+
   static final DamLevelsService instance = DamLevelsService._();
+
+  @visibleForTesting
+  factory DamLevelsService.forTest({
+    required DwsPageFetcher fetch,
+    required Duration secondTryAfter,
+    required Duration giveUpAfter,
+  }) =>
+      DamLevelsService._(fetch: fetch, secondTryAfter: secondTryAfter, giveUpAfter: giveUpAfter, useDisk: false);
+
+  final DwsPageFetcher _fetch;
+  final Duration secondTryAfter;
+  final Duration giveUpAfter;
+  final bool useDisk;
 
   static const _freshFor = Duration(hours: 6);
   final _memory = <String, (DateTime, Map<String, DamLevel>)>{};
   final _inFlight = <String, Future<Map<String, DamLevel>?>>{};
+  final _updates = StreamController<String>.broadcast();
+
+  /// Region codes whose page has just arrived.
+  Stream<String> get updates => _updates.stream;
 
   Future<File> _file(String region) async {
     final dir = await getApplicationSupportDirectory();
@@ -126,26 +173,30 @@ class DamLevelsService {
       return _pick(cached.$2, station);
     }
     // Fresh copy on disk?
-    try {
-      final file = await _file(region);
-      if (await file.exists() && DateTime.now().difference(await file.lastModified()) < _freshFor) {
-        final levels = parseDwsPage(await file.readAsString());
-        _memory[region] = (await file.lastModified(), levels);
-        return _pick(levels, station);
+    if (useDisk) {
+      try {
+        final file = await _file(region);
+        if (await file.exists() && DateTime.now().difference(await file.lastModified()) < _freshFor) {
+          final levels = parseDwsPage(await file.readAsString());
+          _memory[region] = (await file.lastModified(), levels);
+          return _pick(levels, station);
+        }
+      } catch (e) {
+        debugPrint('Ignoring saved dam levels: $e');
       }
-    } catch (e) {
-      debugPrint('Ignoring saved dam levels: $e');
     }
     final downloaded = await (_inFlight[region] ??= _download(region).whenComplete(() => _inFlight.remove(region)));
     if (downloaded != null) return _pick(downloaded, station);
     // No connection: fall back to the last saved copy, however old.
-    try {
-      final file = await _file(region);
-      if (await file.exists()) {
-        final level = parseDwsPage(await file.readAsString())[station.station];
-        if (level != null) return DamLevelResult.found(level, fromCache: true);
-      }
-    } catch (_) {}
+    if (useDisk) {
+      try {
+        final file = await _file(region);
+        if (await file.exists()) {
+          final level = parseDwsPage(await file.readAsString())[station.station];
+          if (level != null) return DamLevelResult.found(level, fromCache: true);
+        }
+      } catch (_) {}
+    }
     return const DamLevelResult.failed(DamLevelProblem.offline);
   }
 
@@ -154,23 +205,64 @@ class DamLevelsService {
     return level == null ? const DamLevelResult.failed(DamLevelProblem.notListed) : DamLevelResult.found(level);
   }
 
-  Future<Map<String, DamLevel>?> _download(String region) async {
-    try {
-      final response = await http.get(Uri.parse(dwsPageUrl(region)), headers: const {
-        'User-Agent': 'ThenAndNow-SA-Town-Names (Android app; thenandnow0351@gmail.com)',
-      }).timeout(const Duration(seconds: 20));
-      if (response.statusCode != 200) return null;
-      final html = utf8.decode(response.bodyBytes, allowMalformed: true);
-      final levels = parseDwsPage(html);
-      if (levels.isEmpty) return null; // not the page we expected
-      _memory[region] = (DateTime.now(), levels);
+  /// Up to two tries at once (see the class notes); completes with the
+  /// first good page, or null once both have failed or [giveUpAfter] has
+  /// passed.
+  Future<Map<String, DamLevel>?> _download(String region) {
+    final done = Completer<Map<String, DamLevel>?>();
+    var running = 0;
+    var secondStarted = false;
+    Timer? secondTimer;
+    Timer? giveUpTimer;
+
+    void finish(Map<String, DamLevel>? levels) {
+      if (done.isCompleted) return;
+      secondTimer?.cancel();
+      giveUpTimer?.cancel();
+      done.complete(levels);
+    }
+
+    late void Function() attempt;
+    void startSecond() {
+      if (secondStarted || done.isCompleted) return;
+      secondStarted = true;
+      attempt();
+    }
+
+    attempt = () {
+      running++;
+      _tryOnce(region).then((levels) {
+        running--;
+        if (levels != null) {
+          finish(levels);
+        } else if (!secondStarted) {
+          startSecond();
+        } else if (running == 0) {
+          finish(null);
+        }
+      });
+    };
+
+    giveUpTimer = Timer(giveUpAfter, () => finish(null));
+    secondTimer = Timer(secondTryAfter, startSecond);
+    attempt();
+    return done.future;
+  }
+
+  /// One request. A good page is kept (in memory and on the phone) and
+  /// announced, even if it arrives after [_download] has given up.
+  Future<Map<String, DamLevel>?> _tryOnce(String region) async {
+    final html = await _fetch(region).catchError((Object _) => null);
+    if (html == null) return null;
+    final levels = parseDwsPage(html);
+    if (levels.isEmpty) return null; // not the page we expected
+    _memory[region] = (DateTime.now(), levels);
+    _updates.add(region);
+    if (useDisk) {
       try {
         await (await _file(region)).writeAsString(html, flush: true);
       } catch (_) {}
-      return levels;
-    } catch (e) {
-      debugPrint('Could not download dam levels for $region: $e');
-      return null;
     }
+    return levels;
   }
 }
