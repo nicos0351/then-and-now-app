@@ -76,9 +76,14 @@ name isn't currently showing.
     (`lib/services/app_update_service.dart`, package `in_app_update`): about
     10 seconds after opening, at most once a day, Google Play's own "Update
     available" box appears; the update downloads in the background and a
-    message then offers **Restart**. Only works for copies installed from
-    Google Play, so you won't see it in builds run from your PC
-  - the ⋮ menu has Refresh data, Help (a plain-English guide that doubles
+    message then offers **Restart**. It checks again when the app comes back
+    from the background (at most hourly). **⋮ → Check for updates** asks
+    straight away and says what it found ("latest version", "not installed
+    from Google Play", "couldn't reach Google Play"). Only works for copies
+    installed from Google Play, so you won't see it in builds run from your
+    PC. Google Play's record of new versions can lag a few hours behind a
+    release; opening the Play Store app refreshes it
+  - the ⋮ menu has Refresh data, Check for updates, Help (a plain-English guide that doubles
     as a legend for the icons; its first topic explains the numbered
     circles) and **About & credits**
   - until someone taps **Got it** in Help, a flashing card in the middle of

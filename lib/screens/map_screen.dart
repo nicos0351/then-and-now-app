@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -276,7 +277,23 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
       if (away >= _reopenAfter && !_helpRead && _helpOpenedUnread && !_helpShowing && mounted) {
         _showHelp();
       }
+      // A new version may have come out while the app sat in the background
+      // (checks at most hourly, offers at most daily).
+      if (mounted) AppUpdateService.checkForUpdate(ScaffoldMessenger.of(context));
     }
+  }
+
+  /// "Check for updates" in the menu: asks Google Play now and says what
+  /// it found.
+  Future<void> _checkForUpdateNow() async {
+    final messenger = ScaffoldMessenger.of(context);
+    messenger.showSnackBar(const SnackBar(content: Text('Checking Google Play for a new version…')));
+    final outcome = await AppUpdateService.checkNow(messenger);
+    final message = AppUpdateService.messageFor(outcome);
+    // Hides "Checking…" (a "ready, Restart" message queued behind it then shows).
+    messenger.hideCurrentSnackBar();
+    if (message == null || !mounted) return;
+    messenger.showSnackBar(SnackBar(content: Text(message), duration: const Duration(seconds: 8)));
   }
 
   void _setPlaceFilter(PlaceFilter value) => setState(() => _placeFilter = value);
@@ -871,6 +888,7 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
               if (value == 'plus') _openPaywall();
               if (value == 'offline') _openOfflineMaps();
               if (value == 'help') _showHelp();
+              if (value == 'update') _checkForUpdateNow();
               if (value == 'about') _openAbout();
               if (value == 'test-plus') PurchaseService.instance.setTestPlus(!_isPlus);
             },
@@ -906,6 +924,14 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
                 value: 'help',
                 child: ListTile(leading: Icon(Icons.help_outline), title: Text('Help'), contentPadding: EdgeInsets.zero),
               ),
+              if (Platform.isAndroid)
+                const PopupMenuItem(
+                  value: 'update',
+                  child: ListTile(
+                      leading: Icon(Icons.system_update_outlined),
+                      title: Text('Check for updates'),
+                      contentPadding: EdgeInsets.zero),
+                ),
               const PopupMenuItem(
                 value: 'about',
                 child: ListTile(
@@ -1613,6 +1639,7 @@ class _HelpText extends StatelessWidget {
     (Icons.search, 'Search finds any town by its current name and takes you there. With $kPlusName it finds old names too.'),
     (Icons.share_outlined, 'With $kPlusName, the share button on a renamed town sends its info, as shown, as a picture and a message.'),
     (Icons.sync, '⋮ → Refresh data gets the latest place names, and shows when you last did it.'),
+    (Icons.system_update_outlined, '⋮ → Check for updates asks Google Play for a new version of the app. The app also checks by itself and offers new versions.'),
     (Icons.share_outlined, 'The share button in the top bar tells friends about the app and where to get it.'),
     (Icons.edit_outlined, 'With $kPlusName, the pencil on a place lets you record a new name change or fix an old name.'),
     (Icons.add_location_alt_outlined, 'With $kPlusName, long-press an empty spot on the map to add a place that\'s missing.'),

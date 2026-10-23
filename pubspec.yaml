@@ -1,7 +1,7 @@
 name: sa_town_names
 description: "Then & Now: SA Place Names - old and new South African place names (towns, airports, dams, passes) on one map."
 publish_to: 'none'
-version: 1.0.5+8
+version: 1.0.6+9
 
 environment:
   sdk: '>=3.6.0 <4.0.0'
