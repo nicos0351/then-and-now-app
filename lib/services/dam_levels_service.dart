@@ -124,17 +124,13 @@ Future<String?> _fetchFromDws(String region) async {
 /// is downloaded at most every few hours and kept on the phone, so an older
 /// copy can still be shown without a connection.
 ///
-/// The site is often very slow to answer the first request and then quick
-/// to answer the next, so if the first try fails, or hasn't answered after
-/// [secondTryAfter], a second request is sent alongside it; whichever
-/// answers first is used. A try that answers after the app has given up
-/// still saves the page and announces it on [updates], so a sheet that
-/// showed "Try again" can show the level after all.
+/// The site can be slow, so the app waits up to [giveUpAfter]. A page that
+/// arrives after that is still saved and announced on [updates], so a sheet
+/// that showed "Try again" shows the level as soon as it's in.
 class DamLevelsService {
   DamLevelsService._({
     DwsPageFetcher? fetch,
-    this.secondTryAfter = const Duration(seconds: 12),
-    this.giveUpAfter = const Duration(seconds: 60),
+    this.giveUpAfter = const Duration(seconds: 45),
     this.useDisk = true,
   }) : _fetch = fetch ?? _fetchFromDws;
 
@@ -143,13 +139,11 @@ class DamLevelsService {
   @visibleForTesting
   factory DamLevelsService.forTest({
     required DwsPageFetcher fetch,
-    required Duration secondTryAfter,
     required Duration giveUpAfter,
   }) =>
-      DamLevelsService._(fetch: fetch, secondTryAfter: secondTryAfter, giveUpAfter: giveUpAfter, useDisk: false);
+      DamLevelsService._(fetch: fetch, giveUpAfter: giveUpAfter, useDisk: false);
 
   final DwsPageFetcher _fetch;
-  final Duration secondTryAfter;
   final Duration giveUpAfter;
   final bool useDisk;
 
@@ -185,7 +179,13 @@ class DamLevelsService {
         debugPrint('Ignoring saved dam levels: $e');
       }
     }
-    final downloaded = await (_inFlight[region] ??= _download(region).whenComplete(() => _inFlight.remove(region)));
+    final downloaded = await (_inFlight[region] ??= _download(region).whenComplete(() {
+          // A block, not `=> _inFlight.remove(...)`: that would return this
+          // very future to whenComplete, which then waits for itself forever
+          // (the cause of testers seeing "Try again" for levels that had in
+          // fact arrived).
+          _inFlight.remove(region);
+        }));
     if (downloaded != null) return _pick(downloaded, station);
     // No connection: fall back to the last saved copy, however old.
     if (useDisk) {
@@ -205,47 +205,17 @@ class DamLevelsService {
     return level == null ? const DamLevelResult.failed(DamLevelProblem.notListed) : DamLevelResult.found(level);
   }
 
-  /// Up to two tries at once (see the class notes); completes with the
-  /// first good page, or null once both have failed or [giveUpAfter] has
-  /// passed.
+  /// Completes with the page's levels, or null if it didn't come (or
+  /// not within [giveUpAfter]).
   Future<Map<String, DamLevel>?> _download(String region) {
     final done = Completer<Map<String, DamLevel>?>();
-    var running = 0;
-    var secondStarted = false;
-    Timer? secondTimer;
-    Timer? giveUpTimer;
-
-    void finish(Map<String, DamLevel>? levels) {
-      if (done.isCompleted) return;
-      secondTimer?.cancel();
-      giveUpTimer?.cancel();
-      done.complete(levels);
-    }
-
-    late void Function() attempt;
-    void startSecond() {
-      if (secondStarted || done.isCompleted) return;
-      secondStarted = true;
-      attempt();
-    }
-
-    attempt = () {
-      running++;
-      _tryOnce(region).then((levels) {
-        running--;
-        if (levels != null) {
-          finish(levels);
-        } else if (!secondStarted) {
-          startSecond();
-        } else if (running == 0) {
-          finish(null);
-        }
-      });
-    };
-
-    giveUpTimer = Timer(giveUpAfter, () => finish(null));
-    secondTimer = Timer(secondTryAfter, startSecond);
-    attempt();
+    final giveUp = Timer(giveUpAfter, () {
+      if (!done.isCompleted) done.complete(null);
+    });
+    _tryOnce(region).then((levels) {
+      giveUp.cancel();
+      if (!done.isCompleted) done.complete(levels);
+    });
     return done.future;
   }
 

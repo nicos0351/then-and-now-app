@@ -46,7 +46,7 @@ class _DamLevelTileState extends State<DamLevelTile> {
     super.dispose();
   }
 
-  /// The service tries twice and gives up after a minute; the timeout here
+  /// The service gives up after 45 seconds; the timeout here
   /// is only a safety net so the spinner can never run forever.
   Future<DamLevelResult> _load() {
     _failed = false;
@@ -57,7 +57,7 @@ class _DamLevelTileState extends State<DamLevelTile> {
     });
     return DamLevelsService.instance
         .levelFor(widget.station)
-        .timeout(const Duration(seconds: 75), onTimeout: () => const DamLevelResult.failed(DamLevelProblem.offline))
+        .timeout(const Duration(seconds: 60), onTimeout: () => const DamLevelResult.failed(DamLevelProblem.offline))
         .catchError((Object _) => const DamLevelResult.failed(DamLevelProblem.offline))
         .then((result) {
       _slowTimer?.cancel();
