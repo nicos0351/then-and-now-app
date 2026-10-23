@@ -69,7 +69,7 @@ name isn't currently showing.
     instead of ~55
   - a **"Renamed towns only"** chip under the banner hides places with no
     name change on record; it is on every time the app opens
-  - a **filter button** next to it: Show all (every time the app opens),
+  - a **filter button** under it: Show all (every time the app opens),
     or only towns, airports, dams or mountain passes. The two combine, e.g.
     "Airports" with "Renamed airports only"
   - **new versions from Google Play** are offered inside the app

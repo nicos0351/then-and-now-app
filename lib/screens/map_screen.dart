@@ -1064,15 +1064,15 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
                               todayYear: _todayYear,
                             ),
                     ),
-                    // Left of the zoom-out button; on narrow phones the
-                    // second filter drops to a row of its own.
+                    // Left of the zoom-out button: "Renamed ... only" with
+                    // the place filter under it.
                     Positioned(
                       top: 60,
                       left: 12,
                       right: 64,
-                      child: Wrap(
-                        spacing: 8,
-                        runSpacing: 8,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           FilterChip(
                             label: Text(_placeFilter.renamedOnlyLabel),
@@ -1084,6 +1084,7 @@ class _MapScreenState extends State<MapScreen> with SingleTickerProviderStateMix
                             pressElevation: 4,
                             tooltip: _renamedOnly ? 'Also show places with no name change' : 'Show only places with a name change',
                           ),
+                          const SizedBox(height: 8),
                           _PlaceFilterButton(value: _placeFilter, onChanged: _setPlaceFilter),
                         ],
                       ),
