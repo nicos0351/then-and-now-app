@@ -40,7 +40,7 @@ const String kAppStoreId = '';
 
 /// Whether "Share this app" mentions the App Store. Set to false if the
 /// app is only on Google Play for now.
-const bool kOnAppStore = true;
+const bool kOnAppStore = false; // no iPhone version yet
 
 /// What to type in the store's search box to find the app.
 const String kStoreSearchText = 'Then & Now SA Place Names';
