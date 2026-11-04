@@ -100,6 +100,22 @@ class AboutScreen extends StatelessWidget {
                 'South African Geographical Names Council and the Minister of Sport, Arts and Culture.',
             url: 'https://en.wikipedia.org/wiki/List_of_renamed_places_in_South_Africa',
           ),
+          const _CreditTile(
+            icon: Icons.account_balance_outlined,
+            title: 'Official source: Government Gazette',
+            subtitle: 'Official name changes are published in the Government Gazette, on the '
+                'South African Government website (gov.za).',
+            url: 'https://www.gov.za/documents/notices',
+          ),
+          const _SectionHeader('Not a government app'),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+            child: Text(
+              '$kAppName is an independent app made by a private developer. It is not affiliated '
+              'with, endorsed by or representing the South African government or any government body.',
+              style: textTheme.bodyMedium,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
             child: Text(

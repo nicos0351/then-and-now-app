@@ -83,6 +83,13 @@ name isn't currently showing.
     installed from Google Play, so you won't see it in builds run from your
     PC. Google Play's record of new versions can lag a few hours behind a
     release; opening the Play Store app refreshes it
+  - **weekly dam levels are switched off** (`kDamLevelsEnabled` in
+    `lib/config/app_info.dart`, since 1.0.8). They came from the Department
+    of Water and Sanitation's website, which refuses visitors outside South
+    Africa, so Google Play's reviewers couldn't open the source links that
+    the store listing must give for government information, and the listing
+    was rejected (Nov 2026). The code and tests stay; switch it back on only
+    after Google agrees, and then list the DWS pages in the description again
   - the ⋮ menu has Refresh data, Check for updates, Help (a plain-English guide that doubles
     as a legend for the icons; its first topic explains the numbered
     circles) and **About & credits**

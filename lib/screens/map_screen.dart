@@ -1348,7 +1348,7 @@ class _TownDetailSheet extends StatelessWidget {
           if (facts != null || damStation != null) ...[
             if (isPlus) ...[
               if (facts != null) PlaceFactsSection(facts: facts!),
-              if (damStation != null) DamLevelTile(station: damStation!),
+              if (kDamLevelsEnabled && damStation != null) DamLevelTile(station: damStation!),
             ] else
               PlusTeaser(
                 title: 'Facts about this ${town.kindLabel?.toLowerCase() ?? 'place'}',
@@ -1629,7 +1629,7 @@ class _HelpText extends StatelessWidget {
     (Icons.zoom_in, 'Pinch with two fingers to zoom, and drag with one finger to move the map.'),
     (Icons.zoom_out_map, 'The button at the top right takes you back to the whole of South Africa.'),
     (Icons.location_on, 'Red pins are places with a name change on record. Blue-grey pins have none on record yet.'),
-    (Icons.local_airport, 'Airports, dams and mountain passes have their own pin shapes. With $kPlusName, tapping one shows facts such as its height, river or capacity, and for big dams how full they are this week.'),
+    (Icons.local_airport, 'Airports, dams and mountain passes have their own pin shapes. With $kPlusName, tapping one shows facts such as its height, river or capacity${kDamLevelsEnabled ? ', and for big dams how full they are this week' : ''}.'),
     (Icons.touch_app_outlined, 'Tap a pin to see when the place was renamed. With $kPlusName you see its previous name, what the new name means and how to say it.'),
     (Icons.update, 'With $kPlusName, the button at the bottom switches the whole map between current and previous names.'),
     (Icons.filter_alt_outlined, '"Renamed towns only" (top left) hides places without a name change. It is on each time the app opens; tap it to see every town.'),

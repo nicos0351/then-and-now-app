@@ -42,5 +42,13 @@ const String kAppStoreId = '';
 /// app is only on Google Play for now.
 const bool kOnAppStore = false; // no iPhone version yet
 
+/// Weekly dam levels from the Department of Water and Sanitation's website
+/// (Plus). Off since 1.0.8: that website only answers visitors in South
+/// Africa, so Google Play's reviewers abroad couldn't open the source links
+/// the store listing must give for government information, and the listing
+/// was rejected. The code stays (lib/services/dam_levels_service.dart);
+/// switch back on only once Google has agreed (see the README).
+const bool kDamLevelsEnabled = false;
+
 /// What to type in the store's search box to find the app.
 const String kStoreSearchText = 'Then & Now SA Place Names';
