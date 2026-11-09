@@ -103,9 +103,9 @@ class AboutScreen extends StatelessWidget {
           const _CreditTile(
             icon: Icons.account_balance_outlined,
             title: 'Official source: Government Gazette',
-            subtitle: 'Official name changes are published in the Government Gazette, on the '
-                'South African Government website (gov.za).',
-            url: 'https://www.gov.za/documents/notices',
+            subtitle: 'Official name changes are published in the Government Gazette by '
+                'Government Printing Works, the official publisher of the Gazette (gpwonline.co.za).',
+            url: 'https://www.gpwonline.co.za/',
           ),
           const _SectionHeader('Not a government app'),
           Padding(
